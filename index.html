@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Fonts -->
+
+    <!-- Bungee Hairline  (font-family: 'Bungee Hairline', cursive; | 'regular' font-weight)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap" rel="stylesheet">         
+
+    <!-- Rajdhani (font-family: 'Rajdhani', sans-serif; | '300, 600' font-weights)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;600&display=swap" rel="stylesheet">      
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+
+<body>
+    <header>
+        <button class="nav__btn">
+            <img src="svg/menu.svg" alt="menuSVG" class="nav__svg">
+        </button>
+        <nav>
+            <ul class="nav__list">
+                <li class="nav__list__item">
+                    <a href="#" class="nav__list__link">home</a>  <!-- to 1st 'main' container 'hero'-->
+                </li>
+                <li class="nav__list__item">
+                    <a href="#" class="nav__list__link">about me</a>  <!-- to 2nd 'main' container 'aboutme'-->
+                </li>
+                <li class="nav__list__item">
+                    <a href="#" class="nav__list__link">example work</a> <!-- to 3rd 'main' container 'examplework'-->
+                </li>
+                <li class="nav__list__item">
+                    <a href="#" class="nav__list__link link__btn">contact</a> <!-- to footer -->
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <main>
+        <div class="container hero__container">
+            <section class="hero__section">
+                <h1>Welcome!</h1>
+                <p class="hero__p">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cupiditate modi, exercitationem recusandae quasi cum atque vero id nobis quas, fugiat dolore ipsa hic eum deleniti corrupti numquam maiores delectus!
+                </p>
+                <button class="hero__btn hero__contactBtn">Get in touch!</button> <!-- to footer -->
+                <button class="hero__btn hero__resumeBtn"> 
+                    <!-- link to pop-up window, scrollable img viewer pop up, contains .pdf button in left corner, X in right corner-->
+                    resume
+                </button>
+            </section>
+        </div>
+
+        <div class="container aboutme__container">
+            <section class="aboutme__section">
+                <div class="aboutme__right">
+                    <img src="#" alt="#" class="aboutme__img">
+                </div>
+
+                <div class="aboutme__left">
+                    <h2 class="aboutme__h2">About Me</h2>
+                    <p class = "aboutme__p">My name is Nick and I'm a self-taught front-end web-developer from Ocean Springs, Mississippi. My skills are primarily in HTML, CSS & Javascript, with proficiency in responsive web and web-application design. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis hic pariatur nam officia! </p>
+                </div>
+            </section>
+        </div>
+
+        <div class="container examplework__container">
+            <section class="examplework__section">
+                <h2 class="examplework__h2">Example Work</h2>
+
+
+            </section>
+        </div>
+
+
+
+           
+
+
+
+      
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src = "index.js"></script>
+</body>
+</html>

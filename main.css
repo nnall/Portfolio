@@ -1,0 +1,114 @@
+/* 
+NOTES
+make each container full page at desktop
+*/
+
+
+*, *::before, *::after{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    font-size: 62.5; /*1rem always = 10px*/
+
+    /* ......COLOR VARIABLES..... */
+    --darkBlue: rgb(30, 66, 88);
+    --medBlue: rgb(65, 111, 140);
+    --darkGrey: rgb(64, 76, 83);
+    --lightGrey:rgb(106, 125, 137);
+    --tanGrey: rgb(237, 237, 237);
+    --tanGreyDark: rgb(78, 78, 78);
+    --white: rgb(205, 216, 221);
+}
+
+body{
+    /* ........FONT........ */
+    font-size:1.5rem;                      /* baseline font-size (1em) = 15px*/
+    font-family: 'Rajdhani', sans-serif;
+    /* position:relative; */
+}
+
+h1, h2, h3{
+    font-family:'Bungee Hairline', cursive;
+}
+
+h1{
+    color:var(--darkBlue);
+}
+
+p{
+    color:var(--tanGreyDark);
+}
+
+.container{
+    padding:2rem;
+    height:100vh;
+}
+
+section > * + *{ 
+    margin-top:2rem;
+}
+
+/* ....................................... HEADER ................................... */
+
+header{
+    padding:1rem 2rem;
+    position:absolute;
+    min-width:100%;
+    background-color:var(--medBlue);
+}
+
+.nav__btn{
+    display:flex;
+}
+
+.nav__svg{
+    width:3rem;
+    height:3rem;
+}
+
+nav{
+   display:none; 
+}
+
+/* ....................................... MAIN ................................... */
+
+/* ......................... HERO ......................... */
+
+.hero__container{
+    background-color:var(--tanGrey);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.hero__section{
+   margin-top: 4rem;
+}
+
+h1{
+    font-size:2.5em;  /* 37.5px */
+    text-align: center;
+}
+
+.hero__p{
+    margin:0 auto;
+    padding-left:2rem;
+
+    max-width:33rem;
+
+}
+
+/* ...... HERO BUTTONS .....*/
+
+.hero__btn{
+    /* margin */
+}
+
+.hero__contactBtn{
+    margin-left:1.5rem;
+}
+
