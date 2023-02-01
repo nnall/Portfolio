@@ -22,13 +22,18 @@ make each container full page at desktop
     --tanGrey: rgb(237, 237, 237);
     --tanGreyDark: rgb(78, 78, 78);
     --white: rgb(205, 216, 221);
+
+
+    --boxShadow: rgb(0, 0, 0, .375);
+    --boxShadowClicked: rgb(0, 0, 0, .4);
 }
 
 body{
     /* ........FONT........ */
-    font-size:1.5rem;                      /* baseline font-size (1em) = 15px*/
+    font-size:1.2rem;                      /* baseline font-size (1em) = 12px*/
     font-family: 'Rajdhani', sans-serif;
-    /* position:relative; */
+    position:relative;
+   
 }
 
 h1, h2, h3{
@@ -37,6 +42,7 @@ h1, h2, h3{
 
 h1{
     color:var(--darkBlue);
+    letter-spacing: -1px;
 }
 
 p{
@@ -44,71 +50,181 @@ p{
 }
 
 .container{
+   
+}
+
+/* turn back to header being included here, undo margin-top adjustments */
+
+.container{
     padding:2rem;
     height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    background-color:var(--tanGrey); 
 }
 
 section > * + *{ 
     margin-top:2rem;
 }
 
+@media(max-width:420px){
+    section> * + *{
+        margin-top:1rem; /* at 420px and lower, reduce the vertical margins of children */
+    }
+}
+
+button{
+    border:none;
+}
+
+button:hover{
+    cursor:pointer;
+}
+
 /* ....................................... HEADER ................................... */
 
 header{
-    padding:1rem 2rem;
-    position:absolute;
+    padding:.75rem 2rem;
+    position:fixed;
+    top:0;
     min-width:100%;
     background-color:var(--medBlue);
+    z-index: 1; /* using with pos:rel'd h1 z-index:0, so that h1 wouldn't go over top of it header*/
 }
 
 .nav__btn{
     display:flex;
+    /* border:1px solid red; */
 }
 
 .nav__svg{
     width:3rem;
     height:3rem;
 }
+.nav__svg:hover, .nav__list__link:hover{
+    background-color: white;
+    color:var(--darkBlue);
+}
+
+
+/* ...............DROP-DOWN NAV / NAV MENU............. */
+
+
+/* nav, when its changed from display:none to display:inline-block, is pos'd absolute with a  */
 
 nav{
-   display:none; 
+   position:absolute;
+   top:4.5rem;
+   display:none;
+   border:1px solid green;
 }
+
+@media (max-width:440px){
+ nav{
+    transform:scale(.8);
+    transform-origin: top left;
+    z-index:0;
+ }
+}
+
+.displayNav{
+    display:inline-block;
+}
+
+/* <ul> */
+.nav__list{
+    list-style-type: none;
+    font-family: 'Bungee Hairline', cursive;
+}
+
+/* <li> */
+.nav__list__item{
+    margin-top:.6rem;
+    
+}
+
+/* <a> */
+.nav__list__link{
+    display:inline-block;
+    background-color: var(--white);
+    text-decoration:none;
+    color:var(--tanGreyDark);
+    font-size:2em;
+    padding:10px;
+    box-shadow:15px 15px var(--boxShadow);
+    /* width:max-content; */
+}
+
+.nav__list__link:active{
+    background-color: white;
+    position:sticky;
+    z-index:-2;
+    transform:translate(.4rem,.2rem) scale(.99);
+    box-shadow: 9px 10px var(--boxShadowClicked);
+    transition:all ease 100ms;
+
+}
+
 
 /* ....................................... MAIN ................................... */
 
 /* ......................... HERO ......................... */
 
-.hero__container{
-    background-color:var(--tanGrey);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
-
 .hero__section{
-   margin-top: 4rem;
+    max-width:max-content;
+    align-self:center;
 }
 
 h1{
     font-size:2.5em;  /* 37.5px */
-    text-align: center;
+    display:inline-block;
+    position:relative;
+    left:-5px;
+    z-index:0;
+}
+
+@media(max-width:325px){
+    h1{
+        font-size:2em;
+    }
 }
 
 .hero__p{
-    margin:0 auto;
-    padding-left:2rem;
-
-    max-width:33rem;
-
+    max-width:25rem;
 }
 
 /* ...... HERO BUTTONS .....*/
 
-.hero__btn{
-    /* margin */
+.hero__btnContainer{
+   font-size:0px;         /* to remove browser-addded spacing aeound the <button> elements */
+   max-width:max-content;
+   margin-top:3rem;
+   display:flex;
+   gap:1.5rem;
 }
 
-.hero__contactBtn{
-    margin-left:1.5rem;
+@media(max-width:420px){
+    .hero__btnContainer{
+        flex-direction:column;
+        margin-top:2rem;
+    }
 }
+
+.hero__btn{
+    font-size:1.4rem;                    /*don't use 'em' bc font-size on container reset 1em to 0 */
+    font-family:'Bungee Hairline', cursive;
+    padding: 1rem;
+    background-color:var(--medBlue);
+    color:white;
+}
+
+.btnHovered{
+
+}
+
+
+
+
+/* ........................ MEDIA QUERIES ...................... */
 
