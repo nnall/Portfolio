@@ -33,6 +33,8 @@ body{
     font-size:1.2rem;                      /* baseline font-size (1em) = 12px*/
     font-family: 'Rajdhani', sans-serif;
     position:relative;
+    border:2px solid blue;
+    padding:0;
    
 }
 
@@ -49,10 +51,6 @@ p{
     color:var(--tanGreyDark);
 }
 
-.container{
-   
-}
-
 /* turn back to header being included here, undo margin-top adjustments */
 
 .container{
@@ -65,17 +63,13 @@ p{
 }
 
 section > * + *{ 
-    margin-top:2rem;
-}
-
-@media(max-width:420px){
-    section> * + *{
-        margin-top:1rem; /* at 420px and lower, reduce the vertical margins of children */
-    }
+    margin-top:1rem; 
 }
 
 button{
     border:none;
+    font-family:'Bungee Hairline', cursive;
+
 }
 
 button:hover{
@@ -117,30 +111,33 @@ nav{
    position:absolute;
    top:4.5rem;
    display:none;
-   border:1px solid green;
+   /* border:1px solid green; */
+
+/* redo <a> font-size, (& 'top' margin possibly) for something more appropriate for up to 350px width
+
+then, as a min-width media query below, increase the <a> font-size to however big for larger screens.
+
+
+*/
+
 }
 
-@media (max-width:440px){
- nav{
-    transform:scale(.8);
-    transform-origin: top left;
-    z-index:0;
- }
-}
 
 .displayNav{
-    display:inline-block;
+    display:inline-block; 
 }
 
 /* <ul> */
 .nav__list{
     list-style-type: none;
     font-family: 'Bungee Hairline', cursive;
+
 }
 
 /* <li> */
 .nav__list__item{
     margin-top:.6rem;
+    max-width:max-content;
     
 }
 
@@ -150,12 +147,13 @@ nav{
     background-color: var(--white);
     text-decoration:none;
     color:var(--tanGreyDark);
-    font-size:2em;
+    font-size:1.5em;
     padding:10px;
     box-shadow:15px 15px var(--boxShadow);
-    /* width:max-content; */
+    /* min-width:100%; */
 }
 
+/* <a> during down-click */
 .nav__list__link:active{
     background-color: white;
     position:sticky;
@@ -177,18 +175,13 @@ nav{
 }
 
 h1{
-    font-size:2.5em;  /* 37.5px */
+    font-size:2em;  
     display:inline-block;
     position:relative;
     left:-5px;
     z-index:0;
 }
 
-@media(max-width:325px){
-    h1{
-        font-size:2em;
-    }
-}
 
 .hero__p{
     max-width:25rem;
@@ -196,35 +189,80 @@ h1{
 
 /* ...... HERO BUTTONS .....*/
 
-.hero__btnContainer{
-   font-size:0px;         /* to remove browser-addded spacing aeound the <button> elements */
+.hero__btnContainer{    
    max-width:max-content;
-   margin-top:3rem;
+   margin-top:2rem;
+   
    display:flex;
+   flex-direction:column;
    gap:1.5rem;
+   font-size:0px; /* to remove browser-addded spacing aeound the <button> elements */
 }
 
-@media(max-width:420px){
-    .hero__btnContainer{
-        flex-direction:column;
-        margin-top:2rem;
-    }
-}
 
 .hero__btn{
     font-size:1.4rem;                    /*don't use 'em' bc font-size on container reset 1em to 0 */
-    font-family:'Bungee Hairline', cursive;
     padding: 1rem;
     background-color:var(--medBlue);
     color:white;
-}
-
-.btnHovered{
-
 }
 
 
 
 
 /* ........................ MEDIA QUERIES ...................... */
+
+/* ................... 325px BREAKPOINT............. */
+@media(min-width:325px){
+    /* ............ MAIN ........... */
+    h1{
+        font-size:2.5em; /* 37.5px */
+    }
+}
+
+@media(min-width:350px){
+    /* ........... HEADER ........... */
+    .nav__list__link{
+        font-size:1.75em;
+    }
+}
+
+
+/* .................. 420px BREAKPOINT............... */
+@media(min-width:420px){
+
+    /* ...... GLOBAL ELEMENTS........ */
+
+    section > * + *{
+        margin-top:2rem;/* at 420px and lower, reduce the vertical margins of children */
+    }
+
+    /* ........... HEADER ........... */
+    
+    .nav__list__link{
+        font-size:2em;
+    }
+
+    /* ............ MAIN ............ */
+
+    .hero__btnContainer{
+        margin-top:3rem;
+        flex-direction:row;
+    }
+    
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
 
