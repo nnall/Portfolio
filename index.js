@@ -1,9 +1,8 @@
 const nav = document.querySelector('nav');
+const navBtn = document.querySelector('.nav__btn');
 
 
- const navBtn = document.querySelector('.nav__btn');
-
-
+// Open/Close Nav menu w/.nav_btn
 
  navBtn.addEventListener('click', function(){
 
@@ -14,4 +13,3 @@ const nav = document.querySelector('nav');
 
 
 
-//  nav <li> 

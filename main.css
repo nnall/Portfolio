@@ -66,15 +66,49 @@ section > * + *{
     margin-top:1rem; 
 }
 
-button{
+button:not(.nav__btn){
     border:none;
     font-family:'Bungee Hairline', cursive;
 
+    font-size:1.4rem;              /*don't use 'em' bc font-size on container reset 1em to 0 */
+    padding: 1rem;
+    background-color:var(--medBlue);
+    color:white;
 }
 
-button:hover{
-    cursor:pointer;
+button, a{
+    transition:ease 115ms;
 }
+
+/* hover state for everything except hamburger .nav__btn */
+button:not(.nav__btn):hover{    /* <-- any button that it not the nav toggle, nor one of the nav link (so buttons), plys*/
+    cursor:pointer;
+    transform:scale(1.15) translate(-.15rem, -.15rem);
+    box-shadow:.28em .28em var(--boxShadow);
+    color:var(--tanGrey); 
+    background-color: var(--white);
+    color: var(--tanGreyDark);
+}
+
+
+/* same positioning/shadow effect for .nav__list__link 's but using different BG-color and font color than is for page buttons */
+.nav__list__link:hover{
+    transform:scale(1.15) translate(-.15rem, -.15rem);
+    box-shadow:.28em .28em var(--boxShadow);
+    background-color: var(--lightGrey);
+    color:white; 
+}
+
+
+/* click state */
+button:not(.nav__btn):active, .nav__list__link:active{
+    color: white;
+    background-color: var(--darkBlue);
+    transform:scale(1) translate(0rem,0rem) ;
+    box-shadow:.1em .1em var(--boxShadow);
+}
+
+
 
 /* ....................................... HEADER ................................... */
 
@@ -92,11 +126,21 @@ header{
     /* border:1px solid red; */
 }
 
+/* nav button hover and click states */
+.nav__btn:hover{
+    cursor:pointer;
+    transform:scale(1.1);
+}
+
+.nav__btn:active{
+    transform:scale(.85);
+}
+
 .nav__svg{
     width:3rem;
     height:3rem;
 }
-.nav__svg:hover, .nav__list__link:hover{
+.nav__svg:hover{
     background-color: white;
     color:var(--darkBlue);
 }
@@ -104,25 +148,14 @@ header{
 
 /* ...............DROP-DOWN NAV / NAV MENU............. */
 
-
-/* nav, when its changed from display:none to display:inline-block, is pos'd absolute with a  */
-
 nav{
    position:absolute;
    top:4.5rem;
    display:none;
    /* border:1px solid green; */
-
-/* redo <a> font-size, (& 'top' margin possibly) for something more appropriate for up to 350px width
-
-then, as a min-width media query below, increase the <a> font-size to however big for larger screens.
-
-
-*/
-
 }
 
-
+/* utility class to reveal <nav> */
 .displayNav{
     display:inline-block; 
 }
@@ -146,26 +179,15 @@ then, as a min-width media query below, increase the <a> font-size to however bi
     display:inline-block;
     background-color: var(--white);
     text-decoration:none;
+    box-shadow:.2em .2em var(--boxShadow);
     color:var(--tanGreyDark);
     font-size:1.5em;
     padding:10px;
-    box-shadow:15px 15px var(--boxShadow);
-    /* min-width:100%; */
-}
-
-/* <a> during down-click */
-.nav__list__link:active{
-    background-color: white;
-    position:sticky;
-    z-index:-2;
-    transform:translate(.4rem,.2rem) scale(.99);
-    box-shadow: 9px 10px var(--boxShadowClicked);
-    transition:all ease 100ms;
-
+   
 }
 
 
-/* ....................................... MAIN ................................... */
+/* .....................................MAIN ..................................*/
 
 /* ......................... HERO ......................... */
 
@@ -182,7 +204,6 @@ h1{
     z-index:0;
 }
 
-
 .hero__p{
     max-width:25rem;
 }
@@ -192,7 +213,6 @@ h1{
 .hero__btnContainer{    
    max-width:max-content;
    margin-top:2rem;
-   
    display:flex;
    flex-direction:column;
    gap:1.5rem;
@@ -201,11 +221,14 @@ h1{
 
 
 .hero__btn{
-    font-size:1.4rem;                    /*don't use 'em' bc font-size on container reset 1em to 0 */
-    padding: 1rem;
-    background-color:var(--medBlue);
-    color:white;
+   
 }
+
+/* ......................... ABOUT ME ......................... */
+
+
+
+
 
 
 
@@ -220,6 +243,7 @@ h1{
     }
 }
 
+/* ................... 350px BREAKPOINT............. */
 @media(min-width:350px){
     /* ........... HEADER ........... */
     .nav__list__link{
@@ -227,10 +251,8 @@ h1{
     }
 }
 
-
 /* .................. 420px BREAKPOINT............... */
 @media(min-width:420px){
-
     /* ...... GLOBAL ELEMENTS........ */
 
     section > * + *{
@@ -249,12 +271,9 @@ h1{
         margin-top:3rem;
         flex-direction:row;
     }
-    
-
-
-
-
 }
+
+
 
 
 
