@@ -39,7 +39,6 @@ body{
 }
 
 h1, h2, h3{
-    font-family:'Bungee Hairline', cursive;
 }
 
 h1{
@@ -48,7 +47,8 @@ h1{
 }
 
 p{
-    color:var(--tanGreyDark);
+    color:var(--darkGrey);
+    font-weight:400;
 }
 
 /* turn back to header being included here, undo margin-top adjustments */
@@ -66,9 +66,9 @@ section > * + *{
     margin-top:1rem; 
 }
 
-button:not(.nav__btn){
+button:not(.nav__btn), 
+.hero__btn{
     border:none;
-    font-family:'Bungee Hairline', cursive;
 
     font-size:1.4rem;              /*don't use 'em' bc font-size on container reset 1em to 0 */
     padding: 1rem;
@@ -77,17 +77,21 @@ button:not(.nav__btn){
 }
 
 button, a{
+    font-family: 'Rajdhani', sans-serif;
     transition:ease 115ms;
+    font-weight: 500;;
 }
 
 /* hover state for everything except hamburger .nav__btn */
-button:not(.nav__btn):hover{    /* <-- any button that it not the nav toggle, nor one of the nav link (so buttons), plys*/
+button:not(.nav__btn):hover, 
+.hero__btn:hover{    
     cursor:pointer;
     transform:scale(1.15) translate(-.15rem, -.15rem);
     box-shadow:.28em .28em var(--boxShadow);
-    color:var(--tanGrey); 
-    background-color: var(--white);
-    color: var(--tanGreyDark);
+    font-weight:600;
+    /* color:var(--tanGrey);  */
+    background-color: var(--darkBlue);
+    /* color: var(--tanGreyDark); */
 }
 
 
@@ -95,13 +99,15 @@ button:not(.nav__btn):hover{    /* <-- any button that it not the nav toggle, no
 .nav__list__link:hover{
     transform:scale(1.15) translate(-.15rem, -.15rem);
     box-shadow:.28em .28em var(--boxShadow);
-    background-color: var(--lightGrey);
+    background-color: var(--darkBlue);
     color:white; 
 }
 
 
 /* click state */
-button:not(.nav__btn):active, .nav__list__link:active{
+button:not(.nav__btn):active, 
+.hero__btn:active, 
+.nav__list__link:active{
     color: white;
     background-color: var(--darkBlue);
     transform:scale(1) translate(0rem,0rem) ;
@@ -114,15 +120,16 @@ button:not(.nav__btn):active, .nav__list__link:active{
 
 header{
     padding:.75rem 2rem;
-    position:fixed;
+    position:sticky;
     top:0;
     min-width:100%;
     background-color:var(--medBlue);
-    z-index: 1; /* using with pos:rel'd h1 z-index:0, so that h1 wouldn't go over top of it header*/
+    /* z-index: 1; using with pos:rel'd h1 z-index:0, so that h1 wouldn't go over top of it header */
 }
 
 .nav__btn{
     display:flex;
+    
     /* border:1px solid red; */
 }
 
@@ -150,7 +157,7 @@ header{
 
 nav{
    position:absolute;
-   top:4.5rem;
+   top:4.9rem;
    display:none;
    /* border:1px solid green; */
 }
@@ -163,7 +170,7 @@ nav{
 /* <ul> */
 .nav__list{
     list-style-type: none;
-    font-family: 'Bungee Hairline', cursive;
+    
 
 }
 
@@ -183,6 +190,7 @@ nav{
     color:var(--tanGreyDark);
     font-size:1.5em;
     padding:10px;
+    border:3px solid var(--tanGreyDark);
    
 }
 
