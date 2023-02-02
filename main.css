@@ -38,8 +38,6 @@ body{
    
 }
 
-h1, h2, h3{
-}
 
 h1{
     color:var(--darkBlue);
@@ -133,6 +131,7 @@ header{
     /* border:1px solid red; */
 }
 
+
 /* nav button hover and click states */
 .nav__btn:hover{
     cursor:pointer;
@@ -155,9 +154,11 @@ header{
 
 /* ...............DROP-DOWN NAV / NAV MENU............. */
 
-nav{
+/* <ul> */
+.nav__list{
    position:absolute;
    top:4.9rem;
+   list-style-type: none;
    display:none;
    /* border:1px solid green; */
 }
@@ -167,12 +168,6 @@ nav{
     display:inline-block; 
 }
 
-/* <ul> */
-.nav__list{
-    list-style-type: none;
-    
-
-}
 
 /* <li> */
 .nav__list__item{
@@ -207,9 +202,6 @@ nav{
 h1{
     font-size:2em;  
     display:inline-block;
-    position:relative;
-    left:-5px;
-    z-index:0;
 }
 
 .hero__p{

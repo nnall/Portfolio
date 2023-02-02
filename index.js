@@ -1,4 +1,5 @@
 const nav = document.querySelector('nav');
+const navList = document.querySelector('.nav__list')
 const navBtn = document.querySelector('.nav__btn');
 
 
@@ -6,9 +7,9 @@ const navBtn = document.querySelector('.nav__btn');
 
  navBtn.addEventListener('click', function(){
 
-    nav.classList.contains('displayNav') ? 
-    nav.classList.remove('displayNav'):
-    nav.classList.add('displayNav')
+    navList.classList.contains('displayNav') ? 
+    navList.classList.remove('displayNav'):
+    navList.classList.add('displayNav')
  })
 
 
