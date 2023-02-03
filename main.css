@@ -35,7 +35,7 @@ body{
     position:relative;
     border:2px solid blue;
     padding:0;
-   
+    
 }
 
 
@@ -66,90 +66,46 @@ section > * + *{
 
 button:not(.nav__btn), 
 .hero__btn{
-    border:none;
-
     font-size:1.4rem;              /*don't use 'em' bc font-size on container reset 1em to 0 */
     padding: 1rem;
     background-color:var(--medBlue);
     color:white;
 }
 
+/* all <button> and <a> */
 button, a{
     font-family: 'Rajdhani', sans-serif;
     transition:ease 115ms;
     font-weight: 500;;
 }
 
-/* hover state for everything except hamburger .nav__btn */
-button:not(.nav__btn):hover, 
-.hero__btn:hover{    
-    cursor:pointer;
-    transform:scale(1.15) translate(-.15rem, -.15rem);
-    box-shadow:.28em .28em var(--boxShadow);
-    font-weight:600;
-    /* color:var(--tanGrey);  */
-    background-color: var(--darkBlue);
-    /* color: var(--tanGreyDark); */
-}
-
-
-/* same positioning/shadow effect for .nav__list__link 's but using different BG-color and font color than is for page buttons */
-.nav__list__link:hover{
-    transform:scale(1.15) translate(-.15rem, -.15rem);
-    box-shadow:.28em .28em var(--boxShadow);
-    background-color: var(--darkBlue);
-    color:white; 
-}
-
-
-/* click state */
-button:not(.nav__btn):active, 
-.hero__btn:active, 
-.nav__list__link:active{
-    color: white;
-    background-color: var(--darkBlue);
-    transform:scale(1) translate(0rem,0rem) ;
-    box-shadow:.1em .1em var(--boxShadow);
-}
-
-
-
 /* ....................................... HEADER ................................... */
 
 header{
     padding:.75rem 2rem;
-    position:sticky;
     top:0;
     min-width:100%;
     background-color:var(--medBlue);
-    /* z-index: 1; using with pos:rel'd h1 z-index:0, so that h1 wouldn't go over top of it header */
 }
 
 .nav__btn{
     display:flex;
-    
-    /* border:1px solid red; */
-}
-
-
-/* nav button hover and click states */
-.nav__btn:hover{
-    cursor:pointer;
-    transform:scale(1.1);
-}
-
-.nav__btn:active{
-    transform:scale(.85);
 }
 
 .nav__svg{
     width:3rem;
     height:3rem;
 }
-.nav__svg:hover{
+
+
+.nav__btn:hover{
+    cursor: pointer;
+    transform:scale(1.2);
     background-color: white;
     color:var(--darkBlue);
 }
+
+
 
 
 /* ...............DROP-DOWN NAV / NAV MENU............. */
@@ -190,6 +146,30 @@ header{
 }
 
 
+/* hover state for everything except hamburger .nav__btn */
+button:not(.nav__btn),
+.hero__btn:hover, 
+.nav__list__link:hover{    
+    cursor:pointer;
+    color:white;
+    margin:-.25rem .25rem .25rem -.25rem;
+    box-shadow:.28em .28em var(--boxShadow);
+    font-weight:600;
+    background-color: var(--darkBlue);
+
+}
+
+/* ............active/click state............. */
+button:not(.nav__btn):active, 
+.hero__btn:active, 
+.nav__list__link:active{
+    color: white;
+    background-color: var(--darkBlue);
+    margin:0;
+    box-shadow:.1em .1em var(--boxShadow);
+}
+
+
 /* .....................................MAIN ..................................*/
 
 /* ......................... HERO ......................... */
@@ -220,17 +200,7 @@ h1{
 }
 
 
-.hero__btn{
-   
-}
-
 /* ......................... ABOUT ME ......................... */
-
-
-
-
-
-
 
 
 /* ........................ MEDIA QUERIES ...................... */
