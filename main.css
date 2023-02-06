@@ -69,6 +69,7 @@ button, a{
     transition:ease 115ms;
     font-weight: 500;;
     border:none;
+    transition:.6s ease-out;
 }
 
 button:not(.nav__btn), 
@@ -153,33 +154,17 @@ always let the child .svg/icon be 100% height or width, and then adjust the pare
 }
 
 
-/* hover state for everything except hamburger .nav__btn */
-
-/* HOVER STATE (WITHOUT TRANSFORM) */
-/*
-button:hover,
-.hero__btn:hover, 
-.nav__list__link:hover{    
-    cursor:pointer;
+.mobileClickEffect{
+    transform:scale(.9);
     color:white;
-    margin:-.25rem .25rem .25rem -.25rem;       
-    box-shadow:.28em .28em var(--boxShadow);
-    font-weight:600;
-    background-color: var(--darkBlue);
-
-}
-*/
-/* ............active/click state............. */
-button:active, 
-.hero__btn:active, 
-.nav__list__link:active{
-    color: white;
-    background-color: var(--darkBlue);
-    margin:0;                                     /*<-- move back to original position when clicked*/
-    box-shadow:.1em .1em var(--boxShadow);
+    margin:0; 
+    background-color: rgb(30, 66, 88);
 }
 
-
+/* .mobileClickEffectNav{
+    transform:scale(.9);
+    color:white;
+} */
 
 
 
@@ -198,7 +183,7 @@ h1{
 }
 
 .hero__p{
-    max-width:25rem;
+    max-width:23rem;
 }
 
 /* ...... HERO BUTTONS .....*/
@@ -213,10 +198,10 @@ h1{
 }
 
 /* ......................... PREVIEWER ......................... */
-
+/* 
 .previewer__container{
 
-}
+} */
 
 /* ......................... ABOUT ME ......................... */
 
@@ -260,6 +245,33 @@ h1{
         flex-direction:row;
     }
 }
+
+/* .................. 1300px DESKTOP BREAKPOINT............... */
+@media(min-width:1300px){
+    .nav__list__link:hover{    
+        cursor:pointer;
+        color:white;
+        margin:-.25rem .25rem .25rem -.25rem;       
+        box-shadow:.28em .28em var(--boxShadow);
+        font-weight:600;
+        background-color: var(--darkBlue);
+    
+    }
+
+    /* ............active/click state............. */
+    button:not(.nav__btn):active, 
+    .hero__btn:active, 
+    .nav__list__link:active{
+    color: white;
+    background-color: var(--darkBlue);
+    margin:0;                                     /*<-- move back to original position when clicked*/
+    box-shadow:.1em .1em var(--boxShadow);
+    }
+    
+}
+
+
+
 
 
 
