@@ -155,14 +155,14 @@ always let the child .svg/icon be 100% height or width, and then adjust the pare
 
 
 .mobileClickEffect{
-    transform:scale(.9);
+    /* transform:scale(.9); */
     color:white;
     margin:0; 
     background-color: rgb(30, 66, 88);
 }
 
 /* .mobileClickEffectNav{
-    transform:scale(.9);
+   
     color:white;
 } */
 

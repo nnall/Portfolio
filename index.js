@@ -1,56 +1,65 @@
 const body = document.querySelector('body');
-
-
 const nav = document.querySelector('nav');
 const navList = document.querySelector('.nav__list');
-const navLinks = document.querySelectorAll('.nav__list__link');
 const navBtn = document.querySelector('.nav__btn');
-const navSVG = document.querySelector('.nav__svg')
-const heroBtns = document.querySelectorAll('.hero__btn');
+const navSVG = document.querySelector('.nav__svg');
 
 
+// ALL <a> on page (including in ".nav__list")
+const pageLinks = document.querySelectorAll('a');
+// const pageLinks = document.querySelectorAll('a:not('nav)');
 
 
+// All <button> elements except the .nav__btn
+const btns = document.querySelectorAll('button:not(.nav__btn)');  /* dont want .nav__btn getting hover class  */ 
 
-// Open/Close Nav menu w/.nav__btn  KEEP THIS LEAVE THIS ALONE - OPENS AND CLOSES NAV MENU
+
+console.log(pageLinks);
+console.log(btns);
+
+
+// OPENS AND CLOSES NAV MENU
 navBtn.addEventListener('click', function(){
-
     navList.classList.contains('displayNav') ? 
     navList.classList.remove('displayNav'):
     navList.classList.add('displayNav')
  })
 
-
-// On and off-click effects for mobile nav links, & hero btns
-
-// USe a resize() funciton? to check page width and apply mobileOnCLick as a callback function?
-
-// 
-
-// use 1300px 'desktop breakpoint bc just after the widest horizontal tablet width (laptops not until ~2300px)
+//////////////////////////////////////////////////////////
 
 
 
-// function applying add eventListeners
+
+
+// use 1300px 'desktop breakpoint bc just after the widest horizontal tablet width (smallest laptop widths start @ ~2300px)
+
+
+// function applying add eventListeners for nav links click/touch down and up
 const mobileOnClick = function(){
 
-    // first test whether viewport is below a certain vw. 
+    if(body.clientWidth < 1300){    // first ensure the viewport is below a 1300 at loadup. 
+         
 
 
-    if(body.clientWidth < 1300){
-        navLinks.forEach((link)=>{
+        // all <a>
+        pageLinks.forEach((link)=>{
+            // touch/click DOWN (add class)
             link.addEventListener('ontouchstart', function(){
                 link.classList.add('mobileClickEffect')
             });
+            // touch/click UP (release) (remove class)
             link.addEventListener('ontouchend', function(){
                 link.classList.remove('mobileClickEffect');
             });
         })
-    
-        heroBtns.forEach((btn)=>{
+
+        // all <button>
+        btns.forEach((btn)=>{
+            // touch/click DOWN (add class)
             btn.addEventListener('ontouchstart', function(){
                 btn.classList.add('mobileClickEffect')
             });
+            // touch/click UP (release) (remove class)
             btn.addEventListener('ontouchend', function(){
                 btn.classList.remove('mobileClickEffect')
             });
@@ -65,7 +74,7 @@ mobileOnClick();
 
 
 
-// at that exact breakpoint, there'll be a mediaquery changing applying the hover and :active states in lieu of these .onclick settings. 
+// in CSS, @1300px MIN-width breakpoint, there'll be a mediaquery applying the hover and :active states applying similar styles to .mobileClickEffect class, but with hover state
 
 
 
