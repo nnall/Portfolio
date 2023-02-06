@@ -33,7 +33,7 @@ body{
     font-size:1.2rem;                      /* baseline font-size (1em) = 12px*/
     font-family: 'Rajdhani', sans-serif;
     position:relative;
-    border:2px solid blue;
+    /* border:2px solid blue; */
     padding:0;
 }
 
@@ -56,6 +56,7 @@ p{
     flex-direction:column;
     justify-content:center;
     background-color:var(--tanGrey); 
+    border:2px solid red;
 }
 
 section > * + *{ 
@@ -115,8 +116,6 @@ always let the child .svg/icon be 100% height or width, and then adjust the pare
     color:var(--darkBlue);
 }
 
-/* about me button is always in hover mode?? */
-
 /* ...............DROP-DOWN NAV / NAV MENU............. */
 
 /* <ul> */
@@ -157,21 +156,21 @@ always let the child .svg/icon be 100% height or width, and then adjust the pare
 /* hover state for everything except hamburger .nav__btn */
 
 /* HOVER STATE (WITHOUT TRANSFORM) */
-
-button:not(.nav__btn):hover,
+/*
+button:hover,
 .hero__btn:hover, 
 .nav__list__link:hover{    
     cursor:pointer;
     color:white;
-    margin:-.25rem .25rem .25rem -.25rem;       /*<-- move left and up slightly when hovered*/
+    margin:-.25rem .25rem .25rem -.25rem;       
     box-shadow:.28em .28em var(--boxShadow);
     font-weight:600;
     background-color: var(--darkBlue);
 
 }
-
+*/
 /* ............active/click state............. */
-button:not(.nav__btn):active, 
+button:active, 
 .hero__btn:active, 
 .nav__list__link:active{
     color: white;
@@ -213,6 +212,11 @@ h1{
    
 }
 
+/* ......................... PREVIEWER ......................... */
+
+.previewer__container{
+
+}
 
 /* ......................... ABOUT ME ......................... */
 
