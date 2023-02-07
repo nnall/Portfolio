@@ -34,6 +34,8 @@ navBtn.addEventListener('click', function(){
    
  })
 
+ 
+
 //////////////////////////////////////////////////////////
 
 
@@ -47,16 +49,16 @@ const mobileOnClick = function(){
         
         const addRemoveLoop = function(linkArray){
 
-            /*, {capture:false, passive:true}*/
+           
 
             // .nav__list__links only
             if(linkArray == navListLinks){ /*<-- gets a different styling class (.navLinkEffect)*/
-                console.log(linkArray)
+                // console.log(linkArray)
                 linkArray.forEach((link)=>{
                     // touch/click DOWN (add class)
                     link.addEventListener('touchstart', function(){
                         link.classList.add('navLinkEffect')
-                    })
+                    }, {passive:false})
                     // touch/click UP (release) (remove class)
                     link.addEventListener('touchend', function(){
                         link.classList.remove('navLinkEffect');
@@ -66,12 +68,12 @@ const mobileOnClick = function(){
             
             // <button> and <a>
             else {
-                console.log(linkArray)
+                // console.log(linkArray)
                 linkArray.forEach((link)=>{
                     // touch/click DOWN (add class)
                     link.addEventListener('touchstart', function(){
-                        link.classList.add('mobileClickEffect')
-                    });
+                        link.classList.add('mobileClickEffect')                        
+                    }, {passive:false});
                     // touch/click UP (release) (remove class)
                     link.addEventListener('touchend', function(){
                         link.classList.remove('mobileClickEffect');
@@ -81,7 +83,6 @@ const mobileOnClick = function(){
         }
         
         // Adding touchstart/touchend event listeners to..
-
         //.nav__list__link <a> elements
         addRemoveLoop(navListLinks);
 

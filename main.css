@@ -47,6 +47,10 @@ p{
     font-weight:400;
 }
 
+a{
+    display:inline-block;
+}
+
 /* turn back to header being included here, undo margin-top adjustments */
 
 .container{
@@ -59,22 +63,30 @@ p{
     border:2px solid red;
 }
 
-section > * + *{ 
+/* section children with preceding sibling get a margin-top, also sub-sections' children with preceding sibling gets same margin-top */
+section > * + *, .left > * + *, .right > * + * {    
     margin-top:1rem; 
+   
+}
+
+.left{
+    border:1px solid blue;
+}
+
+.left > * + * {
+    border:1px solid green;
 }
 
 /* all <button> and <a> */
 button, a{
     font-family: 'Rajdhani', sans-serif;
-    transition:ease 115ms;
     text-transform: uppercase;
     font-weight: 400;;
     border:none;
     transition:all .1s ease-out;
 }
 
-button:not(.nav__btn), 
-.hero__btn{
+a{
     font-size:1.4em;              
     padding: 1rem;
     background-color:var(--medBlue);
@@ -172,9 +184,6 @@ always let the child .svg/icon be 100% height or width, and then adjust the pare
 }
 
 
-
-
-
 /* .....................................MAIN ..................................*/
 
 /* ......................... HERO ......................... */
@@ -235,7 +244,7 @@ h1{
 @media(min-width:420px){
     /* ...... GLOBAL ELEMENTS........ */
 
-    section > * + *{
+    section > * + *, .left > * + *, .right > * + * {
         margin-top:2rem;/* at 420px and lower, reduce the vertical margins of children */
     }
 
@@ -255,7 +264,6 @@ h1{
 
 /* .................. 1300px DESKTOP BREAKPOINT............... */
 @media(min-width:1300px){
-    button:not(.nav__btn):hover, 
     a:hover
     {    
         cursor:pointer;
@@ -268,7 +276,6 @@ h1{
     }
 
     /* ............active/click state............. */
-    button:not(.nav__btn):active, 
     a:active{
     color: white;
     background-color: var(--darkBlue);
