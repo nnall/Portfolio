@@ -75,14 +75,18 @@
 
         <div class="container aboutme__container">
             <section class="aboutme__section">
-                <div class="right aboutme__right">
-                    <img src="#" alt="#" class="aboutme__img">
-                </div>
-
                 <div class="left aboutme__left">
                     <h2 class="aboutme__h2">About Me</h2>
                     <p class = "aboutme__p">I'm Nick and I'm a self-taught front-end web-developer from Ocean Springs, Mississippi. My skills are primarily in HTML, CSS & Javascript, with proficiency in responsive web and web-application design. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis hic pariatur nam officia! </p>
-                    <a class="about__me">About Me</a>
+
+                    <!-- Using a container here so that the self-offsetting <a> margin (when hovered), ex; margin-top:-.25rem won't negate the basic container margin spacing from the "left > * {}" declaration"-->
+
+                    <div class="aboutme__left__btnContainer">
+                        <a class="about__me">About Me</a>
+                    </div>
+                </div>
+                <div class="right aboutme__right">
+                    <img src="#" alt="#" class="aboutme__img">
                 </div>
             </section>
         </div>

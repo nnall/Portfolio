@@ -64,8 +64,8 @@ a{
 }
 
 /* section children with preceding sibling get a margin-top, also sub-sections' children with preceding sibling gets same margin-top */
-section > * + *, .left > * + *, .right > * + * {    
-    margin-top:1rem; 
+section > *, .left > *, .right > *{    
+    margin-bottom:1rem; 
    
 }
 
@@ -173,7 +173,8 @@ always let the child .svg/icon be 100% height or width, and then adjust the pare
     color:white;
     background-color: rgb(30, 66, 88);
     box-shadow:.1em .1em var(--boxShadow);
-    margin:.25rem -.25rem -.25rem .25rem; 
+    margin:.25rem -.25rem -.25rem .25rem;
+    
 
 }
 
@@ -181,9 +182,8 @@ always let the child .svg/icon be 100% height or width, and then adjust the pare
 .mobileClickEffect{
     color:white;
     background-color: rgb(30, 66, 88);
+   
 }
-
-
 /* .....................................MAIN ..................................*/
 
 /* ......................... HERO ......................... */
@@ -214,12 +214,17 @@ h1{
 }
 
 /* ......................... PREVIEWER ......................... */
-/* 
-.previewer__container{
 
-} */
+.previewer__container{
+    display:none;
+}
 
 /* ......................... ABOUT ME ......................... */
+
+.aboutme__left__btnContainer{
+    display:inline-block;
+}
+
 
 
 /* ........................ MEDIA QUERIES ...................... */
@@ -244,8 +249,8 @@ h1{
 @media(min-width:420px){
     /* ...... GLOBAL ELEMENTS........ */
 
-    section > * + *, .left > * + *, .right > * + * {
-        margin-top:2rem;/* at 420px and lower, reduce the vertical margins of children */
+    section > *, .left > *, .right > *{
+        margin-bottom:2rem;
     }
 
     /* ........... HEADER ........... */
@@ -264,7 +269,8 @@ h1{
 
 /* .................. 1300px DESKTOP BREAKPOINT............... */
 @media(min-width:1300px){
-    a:hover
+    /* affects nav <a> (.nav__list__link) & <a> ('.btn' classes) */
+    a:hover     
     {    
         cursor:pointer;
         color:white;
@@ -274,6 +280,7 @@ h1{
         background-color: var(--darkBlue);
     
     }
+
 
     /* ............active/click state............. */
     a:active{
@@ -286,6 +293,12 @@ h1{
 }
 
 
+
+/* 
+Problem: 
+The a:hover includes the 
+
+*/
 
 
 
