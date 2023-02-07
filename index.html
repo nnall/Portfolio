@@ -26,21 +26,21 @@
 <body>
     <header>
         <nav>
-            <button class="nav__btn">
+            <button aria-expanded="false" aria-controls="nav__ul" role="navigation button" class="nav__btn" id ="btn-1">
                 <img src="svg/menu.svg" alt="menu SVG" class="nav__svg">
             </button>
-            <ul class="nav__list">
+            <ul class="nav__list" id="nav__ul" aria-labelledby="btn-1" role = "navigation list">
                 <li class="nav__list__item">
-                    <a href="#" class="nav__list__link">home</a>  <!-- to 1st 'main' container 'hero'-->
+                    <a href="#" class="nav__list__link" role="menu item home">home</a>  <!-- to 1st 'main' container 'hero'-->
                 </li>
                 <li class="nav__list__item">
-                    <a href="#" class="nav__list__link">about me</a>  <!-- to 2nd 'main' container 'aboutme'-->
+                    <a href="#" class="nav__list__link" role="menu item about me">about me</a>  <!-- to 2nd 'main' container 'aboutme'-->
                 </li>
                 <li class="nav__list__item">
-                    <a href="#" class="nav__list__link">example work</a> <!-- to 3rd 'main' container 'examplework'-->
+                    <a href="#" class="nav__list__link" role="menu item example work">example work</a> <!-- to 3rd 'main' container 'examplework'-->
                 </li>
                 <li class="nav__list__item">
-                    <a href="#" class="nav__list__link">contact</a> <!-- to footer -->
+                    <a href="#" class="nav__list__link" role="menu item contact">contact</a> <!-- to footer -->
                 </li>
             </ul>
         </nav>

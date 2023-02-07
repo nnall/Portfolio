@@ -67,9 +67,10 @@ section > * + *{
 button, a{
     font-family: 'Rajdhani', sans-serif;
     transition:ease 115ms;
-    font-weight: 500;;
+    text-transform: uppercase;
+    font-weight: 400;;
     border:none;
-    transition:.6s ease-out;
+    transition:all .1s ease-out;
 }
 
 button:not(.nav__btn), 
@@ -150,21 +151,27 @@ always let the child .svg/icon be 100% height or width, and then adjust the pare
     font-size:1.5em;
     padding:10px;
     border:3px solid var(--tanGreyDark);
-   
 }
 
 
-.mobileClickEffect{
-    /* transform:scale(.9); */
+/* Mobile state-classes for nav <a> and all non-nav <a> */
+
+/* for nav <a> navListLinks (includes movement bc default style has box-shadows)*/
+.navLinkEffect{
     color:white;
-    margin:0; 
+    background-color: rgb(30, 66, 88);
+    box-shadow:.1em .1em var(--boxShadow);
+    margin:.25rem -.25rem -.25rem .25rem; 
+
+}
+
+/* for non-nav <a> "page links" (no mvmt bc don't have box-shadows by default)*/
+.mobileClickEffect{
+    color:white;
     background-color: rgb(30, 66, 88);
 }
 
-/* .mobileClickEffectNav{
-   
-    color:white;
-} */
+
 
 
 
@@ -248,7 +255,9 @@ h1{
 
 /* .................. 1300px DESKTOP BREAKPOINT............... */
 @media(min-width:1300px){
-    .nav__list__link:hover{    
+    button:not(.nav__btn):hover, 
+    a:hover
+    {    
         cursor:pointer;
         color:white;
         margin:-.25rem .25rem .25rem -.25rem;       
@@ -260,8 +269,7 @@ h1{
 
     /* ............active/click state............. */
     button:not(.nav__btn):active, 
-    .hero__btn:active, 
-    .nav__list__link:active{
+    a:active{
     color: white;
     background-color: var(--darkBlue);
     margin:0;                                     /*<-- move back to original position when clicked*/
