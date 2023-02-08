@@ -68,8 +68,24 @@
 
         <!-- PREVIEWER -->
         <div class="container previewer__container">
-            <section class="previewer__section">
+            <section class="previewer__section button__section">
+                <button class="previewer__btn downloadBtn">
+                    <img src="svg/download.svg" alt="download symbol" class="previewer__svg download__svg">
+                    <span>Download</span>
+                </button>
+                <button class="previewer__btn printBtn">
+                    <img src="svg/print.svg" alt="print image" class="previewer__svg print__svg">
+                    <span>Print</span>
+                </button>
+                <!-- make close into circle w/light red bg -->
+                <button class="previewer__btn closeBtn">
+                    <img src="svg/close.svg" alt="close symbol" class="previewer__svg close__svg">
+                </button>
+            </section>
+            
 
+            <section class="previewer__section document__section">
+                <iframe class="iframe" frameborder = "0"  src="https://drive.google.com/file/d/13UKcIrj2ckRQ0_qaHzjRzcLNctObJJXZ/preview"></iframe>
             </section>
         </div>
 
@@ -79,11 +95,12 @@
                     <h2 class="aboutme__h2">About Me</h2>
                     <p class = "aboutme__p">I'm Nick and I'm a self-taught front-end web-developer from Ocean Springs, Mississippi. My skills are primarily in HTML, CSS & Javascript, with proficiency in responsive web and web-application design. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis hic pariatur nam officia! </p>
 
-                    <!-- Using a container here so that the self-offsetting <a> margin (when hovered), ex; margin-top:-.25rem won't negate the basic container margin spacing from the "left > * {}" declaration"-->
-
+                    
                     <div class="aboutme__left__btnContainer">
                         <a class="about__me">About Me</a>
                     </div>
+                    <!-- ^^^  Using a container here so that the self-offsetting <a> margin (when hovered), ex; margin-top:-.25rem won't negate the basic container child margins from "left > * {}" declaration"-->
+
                 </div>
                 <div class="right aboutme__right">
                     <img src="#" alt="#" class="aboutme__img">
