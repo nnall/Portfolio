@@ -23,6 +23,7 @@ make each container full page at desktop
     --tanGreyDark: rgb(78, 78, 78);
     --white: rgb(205, 216, 221);
     --red:  rgb(193, 141, 141);
+    --darkRed: rgb(195, 75, 75);
 
 
     --boxShadow: rgb(0, 0, 0, .375);
@@ -34,7 +35,6 @@ body{
     font-size:1.2rem;                      /* baseline font-size (1em) = 12px*/
     font-family: 'Rajdhani', sans-serif;
     position:relative;
-    border:1px solid red;
     padding:0;
 }
 
@@ -61,7 +61,7 @@ a{
     flex-direction:column;
     justify-content:center;
     background-color:var(--tanGrey); 
-    border:2px solid blue;
+    /* border:2px solid blue; */
 }
 
 /* section children with preceding sibling get a margin-top, also sub-sections' children with preceding sibling gets same margin-top */
@@ -175,12 +175,6 @@ always let the child .svg/icon be 100% height or width, and then adjust the pare
 
 }
 
-/* for non-nav <a> "page links" (no mvmt bc don't have box-shadows by default)*/
-.mobileClickEffect{
-    color:white;
-    background-color: rgb(30, 66, 88);
-   
-}
 /* .....................................MAIN ..................................*/
 
 /* ......................... HERO ......................... */
@@ -213,13 +207,14 @@ h1{
 /* ......................... PREVIEWER ......................... */
 
 .previewer__container{
-    display: block; /* <-- overwriting 'container' display:flex */
+    display:none;
     padding:2rem 1rem;
     min-height:max-content;
     max-height:max-content;
     max-width: 723px;
     margin: 0 auto;
     position:fixed;
+    border: 2px solid var(--tanGreyDark);
 
     top:1.5rem;
     right:1.5rem;
@@ -227,7 +222,7 @@ h1{
     left:1.5rem;
     border-radius: 50px;
 
-    background-color: rgb(255, 192, 203, .5);
+    background-color: var(--white);
 }
 
 .previewer__section{
@@ -244,27 +239,44 @@ h1{
 /* ....................PREVIEWER BUTTON SECTION................ */
 
 .button__section{
-    margin-bottom:1.5rem;
+    margin-bottom:1rem;
 }
 
 .previewer__btn{
     display:flex;
+    border: 3px solid var(--tanGreyDark);
     align-items:center;
-    height:3.25em;
-    max-width:fit-content;
+    height:3rem;
+    max-width:min-content;
     padding-right:.25rem;
     gap:.25rem;
     /* justify-content: space-around; */
     background-color:var(--tanGrey);
-    border: 1px solid var(--tanGreyDark);
+    border: 2px solid var(--tanGreyDark);
 }
+
+
+.previewer__btn:not(.closeBtn):active {
+    background-color:var(--darkBlue);
+}
+
+.previewer__btn:not(.closeBtn):active span{
+    color:white;
+}
+
+.previewer__btn:not(.closeBtn):active svg{
+    stroke: white;
+}
+
+/* for non-nav <a> "page links" (no mvmt bc don't have box-shadows by default)*/
+
 
 .previewer__svg{
     background-color:transparent;
     max-height:100%;
     max-width:3rem;
     stroke:var(--tanGreyDark);
-    stroke-width: 2;
+    stroke-width: 3;
 
 }
 
@@ -275,7 +287,6 @@ h1{
     line-height:.8;
 }
 
-
 .closeBtn{
     background-color: var(--red);
     padding:0rem;
@@ -284,13 +295,34 @@ h1{
     right:1rem;
 }
 
+.closeBtn:active{
+    background-color: var(--darkRed); 
+}
+
+.closeBtn:active .close__svg{
+    stroke:white;
+    
+}
+
+.mobileClickEffect{
+    color:white;
+    background-color: rgb(30, 66, 88);
+    stroke: white;
+   
+}
+
 
 /* .............PREVIEWER DOCUMENT SECTION............... */
 
 /* change out the document in Google Drive with another one with darker text */
 
+.displayPreviewer{
+    display:block; /* <-- overwriting 'container' display:flex */
+}
+
+
 .document__section{
-    border:2px solid purple;
+    border:2px solid var(--tanGreyDark);
     display:block; /*<-- not display:flex like sibling */
     /* position:relative; */
     margin-left:auto;
@@ -298,12 +330,9 @@ h1{
     max-width:50rem;
     height:100vw;
     max-height:80vh;
-    
-   
-  
 }
 
-.iframe{
+#iframe{
     /* position:absolute; */
     width:100%; 
     height:100%; 
@@ -363,10 +392,7 @@ previewer section margin: 0, then set padding on it and just add the elements.. 
         flex-direction:row;
     }
 
-    /* ........PREVIEWER....... */
-    .previewer__section{
-        gap:1rem;
-    }
+    /* ........PREVIEWER............. */
 
     .previewer__btn{
         height: 3rem;
@@ -374,17 +400,16 @@ previewer section margin: 0, then set padding on it and just add the elements.. 
 
     .previewer__btn span{
         font-size:2em;
+        
        
     }
 }
 
 
-
-
 @media(min-width:550px){
     .previewer__section{
         flex-direction:row;
-        gap:2.5rem;
+        /* gap:2.5rem; */
     }
 
     .previewer__btn span{
