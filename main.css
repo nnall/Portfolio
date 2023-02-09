@@ -214,6 +214,7 @@ h1{
 
 .previewer__container{
     display: block; /* <-- overwriting 'container' display:flex */
+    padding:2rem 1rem;
     min-height:max-content;
     max-height:max-content;
     max-width: 723px;
@@ -269,8 +270,9 @@ h1{
 
 .previewer__btn span{
     font-size:1.75em;
-    font-weight: 400;
+    font-weight: 500;
     color:var(--tanGreyDark);
+    line-height:.8;
 }
 
 
@@ -279,7 +281,7 @@ h1{
     padding:0rem;
     position:absolute;
     border-radius:50%;
-    right:2rem;
+    right:1rem;
 }
 
 
