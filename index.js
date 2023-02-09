@@ -109,21 +109,6 @@ mobileOnClick();
 
 
 
-// iframe
-const myIframe = document.getElementById('iframe');
-
-const getPDF = function(){
-    const iframeWindow = myIframe.contentWindow;
-    console.log(iframeWindow)
-
-    console.log(myIframe.contentDocument);
-    // use a DOM method to open the printing dialogue? 
-
-
-
-}
-
-getPDF();
 
 
 

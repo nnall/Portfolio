@@ -322,15 +322,19 @@ h1{
 
 
 .document__section{
+    margin-left:auto;
+    margin-right:auto;
     border:2px solid var(--tanGreyDark);
     display:block; /*<-- not display:flex like sibling */
     /* position:relative; */
-    margin-left:auto;
-    margin-right:auto;
+    
     max-width:50rem;
     height:100vw;
     max-height:80vh;
 }
+
+
+
 
 #iframe{
     /* position:absolute; */
