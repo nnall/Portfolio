@@ -115,8 +115,9 @@ always let the child .svg/icon be 100% height or width, and then adjust the pare
 
 .nav__svg{
     max-height:100%;           /*<------ svg does NOT overflow parent .nav__btn <button> */
-    /* background-color:red; */
-    /* fill:red; */
+    width:4rem;
+    stroke:var(--tanGreyDark);
+    stroke-width: 2;
   
 }
 
@@ -260,6 +261,9 @@ h1{
 .previewer__svg{
     background-color:transparent;
     max-height:100%;
+    max-width:3rem;
+    stroke:var(--tanGreyDark);
+    stroke-width: 2;
 
 }
 
@@ -368,6 +372,7 @@ previewer section margin: 0, then set padding on it and just add the elements.. 
 
     .previewer__btn span{
         font-size:2em;
+        font-weight:400;
     }
 }
 
