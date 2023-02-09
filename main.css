@@ -269,14 +269,14 @@ h1{
 
 .previewer__btn span{
     font-size:1.75em;
-    font-weight: 300;
+    font-weight: 400;
     color:var(--tanGreyDark);
 }
 
 
 .closeBtn{
     background-color: var(--red);
-    padding-right:0rem;
+    padding:0rem;
     position:absolute;
     border-radius:50%;
     right:2rem;
@@ -372,7 +372,7 @@ previewer section margin: 0, then set padding on it and just add the elements.. 
 
     .previewer__btn span{
         font-size:2em;
-        font-weight:400;
+       
     }
 }
 
