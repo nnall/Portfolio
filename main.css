@@ -46,10 +46,7 @@ p{
     font-weight:400;
 }
 
-a{
-    display:inline-block;
-    text-decoration:none;
-}
+
 
 /* turn back to header being included here, undo margin-top adjustments */
 
@@ -83,11 +80,13 @@ button, a{
 
 a{
     font-size:1.4em;              
-    padding: 1rem;
+    padding: .75rem;
     background-color:var(--medBlue);
     color:white;
     display:inline-block;
+    text-decoration:none;
 }
+
 
 /* ....................................... HEADER ................................... */
 
