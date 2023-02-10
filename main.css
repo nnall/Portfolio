@@ -50,6 +50,7 @@ p{
 
 a{
     display:inline-block;
+    text-decoration:none;
 }
 
 /* turn back to header being included here, undo margin-top adjustments */
@@ -85,6 +86,7 @@ a{
     padding: 1rem;
     background-color:var(--medBlue);
     color:white;
+    display:inline-block;
 }
 
 /* ....................................... HEADER ................................... */
@@ -110,7 +112,11 @@ always let the child .svg/icon be 100% height or width, and then adjust the pare
 /* wrapper element <button> */
 .nav__btn{
     display:flex;
-    height:5em;       
+    /* height:4em;        */
+}
+.nav__svg{
+    width:3rem;
+    height:3rem;
 }
 
 .nav__svg{
@@ -154,7 +160,7 @@ always let the child .svg/icon be 100% height or width, and then adjust the pare
 .nav__list__link{
     display:inline-block;
     background-color: var(--white);
-    text-decoration:none;
+    
     box-shadow:.2em .2em var(--boxShadow);
     color:var(--tanGreyDark);
     font-size:1.5em;
@@ -201,28 +207,31 @@ h1{
    display:flex;
    flex-direction:column;
    gap:1.5rem;
-   
 }
+
+.hero__btn{
+    max-width:max-content;
+}
+
+
 
 /* ......................... PREVIEWER ......................... */
 
 .previewer__container{
     display:none;
-    padding:2rem 1rem;
-    min-height:max-content;
-    max-height:max-content;
-    max-width: 723px;
-    margin: 0 auto;
-    position:fixed;
-    border: 2px solid var(--tanGreyDark);
-
-    top:1.5rem;
-    right:1.5rem;
-    bottom:1.5rem;
-    left:1.5rem;
-    border-radius: 50px;
-
     background-color: var(--white);
+    border: 2px solid var(--tanGreyDark);
+    border-radius: 50px;
+    padding:2rem 1rem;
+
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:90%;
+    max-width:1150px;
+    min-height:max-content; 
+    max-height:max-content; 
 }
 
 .previewer__section{
@@ -255,36 +264,25 @@ h1{
     border: 2px solid var(--tanGreyDark);
 }
 
-
-.previewer__btn:not(.closeBtn):active {
-    background-color:var(--darkBlue);
-}
-
-.previewer__btn:not(.closeBtn):active span{
-    color:white;
-}
-
-.previewer__btn:not(.closeBtn):active svg{
-    stroke: white;
-}
-
 /* for non-nav <a> "page links" (no mvmt bc don't have box-shadows by default)*/
 
 
 .previewer__svg{
     background-color:transparent;
-    max-height:100%;
+    max-height:3rem;
     max-width:3rem;
     stroke:var(--tanGreyDark);
     stroke-width: 3;
 
 }
 
+
+
 .previewer__btn span{
-    font-size:1.75em;
+    font-size:1em;
     font-weight: 500;
     color:var(--tanGreyDark);
-    line-height:.8;
+    /* line-height:.8; */
 }
 
 .closeBtn{
@@ -295,14 +293,25 @@ h1{
     right:1rem;
 }
 
-.closeBtn:active{
+.previewer__btn:active{
+    background-color: var(--darkBlue);
+}
+
+.downloadBtn:active span, .printBtn:active span{
+    color:white;
+}
+
+.downloadBtn:active svg, .printBtn:active svg{
+    stroke:white;
+}
+
+
+.closeBtn:active {
+    transform:scale(.7);
     background-color: var(--darkRed); 
 }
 
-.closeBtn:active .close__svg{
-    stroke:white;
-    
-}
+/* */
 
 .mobileClickEffect{
     color:white;
@@ -326,24 +335,19 @@ h1{
     margin-right:auto;
     border:2px solid var(--tanGreyDark);
     display:block; /*<-- not display:flex like sibling */
-    /* position:relative; */
-    
-    max-width:50rem;
+    /* max-width:50rem; */
     height:100vw;
-    max-height:80vh;
+    max-height:70vh;
 }
 
 
 
 
 #iframe{
-    /* position:absolute; */
-    width:100%; 
-    height:100%; 
-    top:0;
-    right:0;
-    bottom:0;
-    left:0; 
+    position:relative;
+    min-width:100%; 
+    min-height:100%; 
+    max-height:40vh;
 }
 
 /* ......................... ABOUT ME ......................... */
@@ -403,21 +407,28 @@ previewer section margin: 0, then set padding on it and just add the elements.. 
     }
 
     .previewer__btn span{
-        font-size:2em;
+        font-size:1em;
         
        
     }
 }
 
+/* 
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
 
-@media(min-width:550px){
+*/
+
+
+@media(min-width:560px){
     .previewer__section{
         flex-direction:row;
         /* gap:2.5rem; */
     }
 
     .previewer__btn span{
-        font-size:2.3em;
+        font-size:1.3em;
     }
 
 }
@@ -426,27 +437,46 @@ previewer section margin: 0, then set padding on it and just add the elements.. 
 /* .................. 1300px DESKTOP BREAKPOINT............... */
 @media(min-width:1300px){
     /* affects nav <a> (.nav__list__link) & <a> ('.btn' classes) */
-    a:hover     
+    a:not(.closeBtn):hover     
     {    
         cursor:pointer;
         color:white;
         margin:-.25rem .25rem .25rem -.25rem;       
-        box-shadow:.28em .28em var(--boxShadow);
+        box-shadow:.23em .23em var(--boxShadow);
         font-weight:600;
         background-color: var(--darkBlue);
-    
+    }
+
+    a:not(.closeBtn):hover span{
+        color:white;
+    }
+
+    a:not(.closeBtn):hover svg{
+        stroke: white;
     }
 
 
+
     /* ............active/click state............. */
-    a:active{
+    a:not(.closedBtn):active{
     color: white;
     background-color: var(--darkBlue);
     margin:0;                                     /*<-- move back to original position when clicked*/
     box-shadow:.1em .1em var(--boxShadow);
     }
     
+    .closeBtn:hover{
+        background-color: var(--darkRed); 
+        cursor:pointer;
+    }
+    
+    .closeBtn:hover .close__svg{
+        stroke:white;
+        
+    }
 }
+
+
 
 
 

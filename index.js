@@ -77,15 +77,19 @@ const mobileOnClick = function(){
             else {
                 // console.log(linkArray)
                 linkArray.forEach((link)=>{
-                    // 
                     // touch/click DOWN (add class)
-                    link.addEventListener('touchstart', function(){
-                        link.classList.add('mobileClickEffect')                        
-                    });
-                    // touch/click UP (release) (remove class)
-                    link.addEventListener('touchend', function(){
-                        link.classList.remove('mobileClickEffect');
-                    });
+                    if(!link.classList.contains('closeBtn')){
+                        link.addEventListener('touchstart', function(){
+                            link.classList.add('mobileClickEffect');
+    
+                        });
+                        // touch/click UP (release) (remove class)
+                        link.addEventListener('touchend', function(){
+                            link.classList.remove('mobileClickEffect');
+    
+                        });
+
+                    }    
                 })
             }
         }
