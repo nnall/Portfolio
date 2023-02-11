@@ -17,6 +17,13 @@ const pageLinks = document.querySelectorAll('a:not(.nav__list__link)'); // ALL <
 const btns = document.querySelectorAll('button:not(.nav__btn)');  // All <button> elements except the .nav__btn
 /* dont want .nav__btn getting .mobileClickEffect settings class when clicked*/ 
 
+// PRINT.JS LIBRARY
+
+
+import print from "print-js";
+
+
+
 
 // OPENS AND CLOSES NAV MENU
 navBtn.addEventListener('click', function(){
@@ -40,6 +47,10 @@ resumeBtn.addEventListener('click', ()=>{
 closeBtn.addEventListener('click', ()=>{
     previewer.classList.remove('displayPreviewer');
 })
+
+
+// PRINT BUTTON
+
 
 
 

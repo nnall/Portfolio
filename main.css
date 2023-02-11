@@ -517,8 +517,6 @@ previewer section margin: 0, then set padding on it and just add the elements.. 
         stroke: white;
     }
 
-
-
     /* ............active/click state............. */
     a:not(.closedBtn):active{
     color: white;
@@ -537,17 +535,19 @@ previewer section margin: 0, then set padding on it and just add the elements.. 
         
     }
 
-    
-}
-
-@media(min-width:1340px){
     .aboutme__container{
         /* background-size:cover; */
-
+        
         /* background-position-y:bottom;
         background-position-x:center; */
         /* background-position:unset; */
     }
+
+    
+}
+
+@media(min-width:1340px){
+   
 }
 
 
