@@ -8,17 +8,14 @@ const navSVG = document.querySelector('.nav__svg');
 const previewer = document.querySelector('.previewer__container');
 const resumeBtn = document.querySelector('.hero__resumeBtn');
 const closeBtn = document.querySelector('.closeBtn');
+const printBtn = document.querySelector('.printBtn');
 
 
-// All .nav__list__links
-const navListLinks = document.querySelectorAll('.nav__list__link') 
 
-// ALL <a> on page (NOT including NAV <a> <-- see above)
-const pageLinks = document.querySelectorAll('a:not(.nav__list__link)');
-// console.log(pageLinks);
-
-// All <button> elements except the .nav__btn
-const btns = document.querySelectorAll('button:not(.nav__btn)');  /* dont want .nav__btn getting .mobileClickEffect settings class when clicked*/ 
+const navListLinks = document.querySelectorAll('.nav__list__link') // All .nav__list__links
+const pageLinks = document.querySelectorAll('a:not(.nav__list__link)'); // ALL <a> on page (NOT including NAV <a> <-- see above)
+const btns = document.querySelectorAll('button:not(.nav__btn)');  // All <button> elements except the .nav__btn
+/* dont want .nav__btn getting .mobileClickEffect settings class when clicked*/ 
 
 
 // OPENS AND CLOSES NAV MENU
@@ -69,6 +66,7 @@ const mobileOnClick = function(){
                     // touch/click UP (release) (remove class)
                     link.addEventListener('touchend', function(){
                         link.classList.remove('navLinkEffect');
+                        // navList.classList.remove('displayNav');
                     });
                 })
             } 
