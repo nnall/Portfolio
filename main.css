@@ -71,9 +71,11 @@ p{
     padding:2rem;
     min-height:100vh;
     margin:0; /* <-- undoing Bootstrap CSS margin-left:auto, margin-right:auto*/
+    width:unset;/* <-- undoing several Bootstrap MQ-set widths */
     display:flex;
     flex-direction:column;
     justify-content:center;
+
     background-color:var(--tanGrey); 
     max-width:none;
    
@@ -385,6 +387,7 @@ h1{
     background-image: url(img/desktop.png) ;
     background-size: cover;
     background-repeat: no-repeat;
+    display:block; /* undoing Bootstrap 'display:table' */
 
     /* /* background-position-y:bottom; */
     background-position:center; 
@@ -420,15 +423,8 @@ h1{
 
 /* .................EXAMPLE WORK CONTAINTER ...................*/
 
-.examplework__container{
-    border: 2px solid red;
-}
-
-.examplework__section{
-    border:2px solid blue;
-}
-.carousel-item{
-    border: 2px solid red;  
+.carousel__img{
+    max-width:100%;
 }
 
 /* ........................ MEDIA QUERIES ...................... */
