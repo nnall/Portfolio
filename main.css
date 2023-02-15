@@ -33,13 +33,6 @@
 html{
     scroll-behavior:smooth;
 
-    /* 
-    @1300px MQ increased the 
-    figure out a way to have link for 'About Me' container specifically land you in the vertical middle of that section, (the other links can all land at the beginning of their sections) instead of the top of the container (height increased at 1300px MQ to 120vh in order to not have the blur be cut off  of the background gradient at full screens sizes.  Want, at full-screen, to still see both top and bottom gradients. backgrounnd-size:cover is the only way to keep the image stretching all the way across at full desktop, so the container must have extra height to allow for the 'cover' image getting bigger horizontally and vertically. 
-
-
-
-    */
 }
 
 body{
@@ -62,32 +55,26 @@ h2{
 p{
     color:var(--darkGrey);
     font-weight:400;
+    margin:0;
 }
-
 
 
 /* turn back to header being included here, undo margin-top adjustments */
 .container{
     padding:2rem;
     min-height:100vh;
-    margin:0; /* <-- undoing Bootstrap CSS margin-left:auto, margin-right:auto*/
-    width:unset;/* <-- undoing several Bootstrap MQ-set widths */
     display:flex;
     flex-direction:column;
     justify-content:center;
 
     background-color:var(--tanGrey); 
     max-width:none;
-   
-    /* border:2px solid blue; */
 }
 
 /* section children with preceding sibling get a margin-top, also sub-sections' children with preceding sibling gets same margin-top */
-section > *, .left > *, .right > *{    
+section:not(.examplework__section) > *, .left > *, .right > *{    
     margin-bottom:1rem; 
-   
 }
-
 
 /* all <button> and <a> */
 button, a{
@@ -108,15 +95,20 @@ a{
     text-decoration:none;
 }
 
+
+
+
+/* ................ non-Nav <a> links.................. */
+
 a:not(.nav__list__link){
-    color:white !important;  /* to undo the bootstrap stylings*/
+   color:white;
 }
 
 a:not(.nav__list__link):active{
     color:white;
     background-color: rgb(30, 66, 88);
     stroke: white;
-    /* text-decoration:none; */
+    text-decoration:none;
     
 }
 
@@ -133,15 +125,6 @@ header{
    
 }
 
-/* 
-"size the svg height as 100%, then size its container <button>"
-
-grace's answer
-Instead of using an <img> inside the <button> which 'sourced' the .svg, she used an <svg> html element inside the <button>
-
-always let the child .svg/icon be 100% height or width, and then adjust the parent element (ex <button>) ot the height you want it to be on the page. 
-
-*/
 
 /* wrapper element <button> */
 .nav__btn{
@@ -173,6 +156,7 @@ always let the child .svg/icon be 100% height or width, and then adjust the pare
 .nav__list{
    position:absolute;
    top:4.5rem;
+   padding-left:0;     /*<-- undoing Bootstrap CSS (reboot.scss, line 167)*/
    list-style-type: none;
    display:none;
 }
@@ -182,12 +166,10 @@ always let the child .svg/icon be 100% height or width, and then adjust the pare
     display:inline-block; 
 }
 
-
 /* <li> */
 .nav__list__item{
     margin-top:.6rem;
     max-width:max-content;
-    
 }
 
 /* <a> */
@@ -210,7 +192,8 @@ always let the child .svg/icon be 100% height or width, and then adjust the pare
     background-color: rgb(30, 66, 88);
     box-shadow:.1em .1em var(--boxShadow);
     margin:.15rem -.15rem -.15rem .15rem;
-    
+    text-decoration:none;
+
 
 }
 
@@ -220,6 +203,7 @@ always let the child .svg/icon be 100% height or width, and then adjust the pare
 
 .hero__section{
     max-width:max-content;
+    margin-top: 6rem;
     align-self:center;
 }
 
@@ -259,7 +243,7 @@ h1{
 
     position:fixed;
     z-index:150;
-    top:50%;
+    top:53%;
     left:50%;
     transform:translate(-50%, -50%);
     width:90%;
@@ -271,19 +255,18 @@ h1{
 .previewer__section{
     display:flex;
     flex-direction: column;
-    gap:.85rem;
+    gap:none;
 }
 
-/* undoing the "section child margin-bottom" setting, section > * {margin-bottom: 1rem;} <-- in universal selectors */
-.previewer__section > *{
-    margin:0;
-}
 
 /* ....................PREVIEWER BUTTON SECTION................ */
+
+
 
 .button__section{
     margin-bottom:1rem;
 }
+
 
 .previewer__btn{
     display:flex;
@@ -326,6 +309,7 @@ h1{
     border-radius:50%;
     right:1rem;
 }
+
 /*  */
 .previewer__btn:active{
     background-color: var(--darkBlue);
@@ -347,7 +331,6 @@ h1{
 
 
 
-
 /* .................PREVIEWER DOCUMENT SECTION.................... */
 
 /* change out the document in Google Drive with another one with darker text */
@@ -355,7 +338,6 @@ h1{
 .displayPreviewer{
     display:block; /* <-- overwriting 'container' display:flex */
 }
-
 
 .document__section{
     margin-left:auto;
@@ -365,7 +347,6 @@ h1{
     height:100vw;
     max-height:70vh;
 }
-
 
 #iframe{
     display:flex;
@@ -387,9 +368,7 @@ h1{
     background-image: url(img/desktop.png) ;
     background-size: cover;
     background-repeat: no-repeat;
-    display:block; /* undoing Bootstrap 'display:table' */
-
-    /* /* background-position-y:bottom; */
+    
     background-position:center; 
     min-height:100vh;
     content:'';
@@ -421,11 +400,62 @@ h1{
 }
 
 
-/* .................EXAMPLE WORK CONTAINTER ...................*/
+/* .................EXAMPLE WORK CONTAINER ...................*/
+
+/* 
+make exampleWork Section be a taller that other secitons/not determined by its content height?
+*/
+
+.examplework__container{
+    padding-left:1rem;
+    padding-right:1rem; 
+    /* justify-content: center;;    */
+    
+}
+
+.examplework__section{
+    /* display:block; */
+    border:2px solid blue;
+    align-self:center;
+    max-width:80rem;;
+    margin-top:3rem; 
+    text-align: center;
+    min-height:80%;
+}
+
+.examplework__h2{
+    font-size: 3em;;
+   display:inline-block;
+   margin-bottom: 1.25rem;
+    
+}
+
+.carousel{
+    border:2px solid red;
+    max-height:100%;
+
+}
+
+.carousel-inner{
+    border: 1px solid yellow;
+}
 
 .carousel__img{
-    max-width:100%;
+    max-height:100%;  
 }
+
+
+.carousel-caption{
+    display:block;
+    background-color: aqua;
+    border:2px solid red;
+
+    right:5%;
+    left:5%;
+    padding-top:.45rem;
+    padding-bottom:.45rem;
+}
+
 
 /* ........................ MEDIA QUERIES ...................... */
 
@@ -449,7 +479,7 @@ h1{
 @media(min-width:420px){
     /* ...... GLOBAL ELEMENTS........ */
 
-    section > *, .left > *, .right > *{
+    section:not(.examplework__section):not(.previewer__section) > *, .left > *, .right > *{
         margin-bottom:2rem;
     }
 
@@ -470,7 +500,7 @@ h1{
 @media(min-width:560px){
     .previewer__section{
         flex-direction:row;
-        /* gap:2.5rem; */
+        gap:1.5rem;
     }
 
 }
@@ -521,16 +551,6 @@ h1{
     
 }
 
-/* @media(min-width:1340px){
-   
-} */
-
-
-/* 
-Problem: 
-The a:hover includes the 
-
-*/
 
 
 

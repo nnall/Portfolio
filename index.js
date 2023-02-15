@@ -56,8 +56,12 @@ closeBtn.addEventListener('click', ()=>{
 
 
 // Bootstrap Carousel 
+// $('.carousel').carousel({});
+// document.addEventListener("DOMContentLoaded", function(){
+    
+//   });
 
-$('.carousel').carousel();
+
 
 // $(function () {
 //     $('.carousel').carousel({interval: 2000})
