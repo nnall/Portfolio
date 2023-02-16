@@ -14,9 +14,9 @@
     --darkBlue: rgb(30, 66, 88);
     --medBlue: rgb(65, 111, 140);
     --darkGrey: rgb(64, 76, 83);
-    --lightGrey:rgb(106, 125, 137);
+    --lightGrey:#6a7d89;
     --tanGrey: #ededed;
-    --tanGreyTrans: rgb(237, 237, 237, .85);
+    --tanGreyTrans: rgb(237, 237, 237, .7);
     --tanGreyDark: rgb(78, 78, 78);
     --white: rgb(205, 216, 221);
     --whiteTrans:rgba(205, 216, 221, 0.779);
@@ -62,15 +62,18 @@ p{
 /* turn back to header being included here, undo margin-top adjustments */
 .container{
     padding:2rem;
-    min-height:100vh;
+    height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
-
+    align-items: center;
     background-color:var(--tanGrey); 
     max-width:none;
 }
 
+section{
+    margin-top: 6rem;
+}
 /* section children with preceding sibling get a margin-top, also sub-sections' children with preceding sibling gets same margin-top */
 section:not(.examplework__section) > *, .left > *, .right > *{    
     margin-bottom:1rem; 
@@ -203,7 +206,7 @@ header{
 
 .hero__section{
     max-width:max-content;
-    margin-top: 6rem;
+    /* margin-top: 6rem; */
     align-self:center;
 }
 
@@ -405,56 +408,142 @@ h1{
 /* 
 make exampleWork Section be a taller that other secitons/not determined by its content height?
 */
-
 .examplework__container{
     padding-left:1rem;
-    padding-right:1rem; 
-    /* justify-content: center;;    */
+    padding-right:1rem;
+    padding-bottom:0; 
+    /* justify-content:flex-end; */
+    
     
 }
 
+
+
 .examplework__section{
-    /* display:block; */
     border:2px solid blue;
-    align-self:center;
-    max-width:80rem;;
-    margin-top:3rem; 
+    height:90%;
+    width:95%;
+    max-width:80rem;
     text-align: center;
-    min-height:80%;
+    margin-top:2rem;
+    display:flex;
+    flex-direction:column;
+    position:relative;
 }
 
 .examplework__h2{
-    font-size: 3em;;
+    font-size: 2.5em;
    display:inline-block;
-   margin-bottom: 1.25rem;
+    margin:0;
+    padding:1rem;
     
 }
 
-.carousel{
-    border:2px solid red;
-    max-height:100%;
+/* 
+In needed the .carousel to take up the remaining height inside of .examplework__section, but I couldn't use a percentage because .carousel shared the parent with the static-value height'd H2, so with a percentage setting, it only ever overflows or underflows. 
 
+so I took the H2 out of the parent .examplework__section, at which point it allowed me to set .carousel to 100% of the .examplework__section.  
+
+*/
+
+/* container */
+.carousel{
+    flex-grow:1;
+    /* flex-shrink: 1;
+    flex-basis:100%; */
+   
+    border:2px solid red;
+    
 }
 
 .carousel-inner{
-    border: 1px solid yellow;
+   height:100%;
+   border:2px solid orange;
+   /* position:relative; */
+    
 }
+
+.carousel-control-next, 
+.carousel-control-prev{
+    transition:all .1s ease-out;
+    background-color: var(--tanGreyTrans);
+}
+
+.carousel-control-next:hover, 
+.carousel-control-prev:hover{
+    /* position:static; */
+    /* background-color: var(--tanGreyTrans); */
+}
+
+
+
+/* NOTE; Bring these into the .carousel */
+.carousel-control-next:active, 
+.carousel-control-prev:active{
+    /* position:static; */
+    /* background-color: var(--tanGreyTrans); */
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%6a7d89'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+
+    /* background-image: none;; */
+}
+
+.carousel-control-next-icon{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%6a7d89'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+
+.carousel-item{           /* <--- bootstrap class, undoing position:absolute*/
+    border: 1px solid green;
+    position:static;      
+    height:100%;
+}
+
 
 .carousel__img{
-    max-height:100%;  
+    /* max-height:100%;   */
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
 }
-
 
 .carousel-caption{
-    display:block;
     background-color: aqua;
-    border:2px solid red;
-
-    right:5%;
-    left:5%;
+    /* border:2px solid red; */
+    right:.5rem;
+    left:.5rem;
+    bottom:2rem;
+    margin:0 auto;
     padding-top:.45rem;
     padding-bottom:.45rem;
+    max-width:456px;
+
 }
+
+.carousel-indicators{
+    margin-bottom:0;
+}
+
+
+.carousel-indicators [data-bs-target] {
+    background-color:var(--tanGreyDark);
+}
+
+/* ........................ TEST CONTAINER ...................... */
+.test__container{
+    border:1px solid blue;
+}
+
+.test__child{
+    border:1px solid pink;
+    height:75%;
+}
+
+
 
 
 /* ........................ MEDIA QUERIES ...................... */
