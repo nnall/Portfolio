@@ -24,7 +24,7 @@
 <body>
     <header>
         <nav>
-            <button aria-expanded="false" aria-controls="nav__ul" role="navigation button" class="nav__btn" id ="btn-1">
+            <button aria-expanded="false" aria-controls="nav__ul" role="navigation button" class="nav__btn" id="btn-1">
                 <svg class = "nav__svg" alt = "menu symbol" width="800px" height="800px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000"><line x1="16" y1="32" x2="48" y2="32"/><line x1="16" y1="20" x2="48" y2="20"/><line x1="16" y1="44" x2="48" y2="44"/></svg>
             </button>
             <ul class="nav__list" id="nav__ul" aria-labelledby="btn-1" role = "navigation list">
@@ -46,49 +46,26 @@
 
 
 
-    <main>
+    <main aria-hidden = "false">
         <!-- HERO -->
-        <div class="container hero__container" id = "hero">
+        <div class="container hero__container" id="hero">
             <section class="hero__section">
                 <h1>Welcome!</h1>
                 <p class="hero__p">
                     Welcome to my portfolio! I'm Nick! Check back frequently for updated and new front-end dev projects, posted below. I am excited to join the web-development community, to learn more and refine my skills. 
                 </p>
                 <div class="hero__btnContainer">
-                    <a class="hero__btn hero__contactBtn">Get in touch!</a> <!-- to footer -->
-                    <a onClick class="hero__btn hero__resumeBtn">
+                    <a class="hero__btn hero__contactBtn" href="#footer">Get in touch!</a> <!-- to footer-->
+                    <button class = "hero__btn hero__resumeBtn" aria-expanded="false" aria-controls="previewerCtn" role="modal">
                         resum<span>&egrave;</span>
-                    </a>
+                    </button> 
                 </div>
             </section>
         </div>
 
-        <!-- PREVIEWER -->
-        <div class="container previewer__container">
-            <section class="previewer__section button__section">
-                <a class="previewer__btn downloadBtn" href = "resume/ExampleResume.pdf" download = "ExampleResume.pdf">
-                    <svg class = "previewer__svg download__svg" alt = "download symbol" width="800px" height="800px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000"><rect x="8" y="40" width="48" height="16"/><polyline points="24 24 32 32 40 24"/><line x1="32" y1="8" x2="32" y2="32"/><line x1="16" y1="48" x2="20" y2="48"/><line x1="24" y1="48" x2="28" y2="48"/></svg>
-                    <span class = "previewer__span">Download</span>
-                </a>
-                <a class="previewer__btn printBtn" onclick="printJS('resume/ExampleResume.pdf')">
-                    <svg class = "previewer__svg print__svg" alt = "print image" width="800px" height="800px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000"><rect x="16" y="32" width="32" height="24"/><line x1="24" y1="48" x2="40" y2="48"/><line x1="24" y1="40" x2="40" y2="40"/><polyline points="20 16 20 8 44 8 44 16"/><polyline points="16 40 8 40 8 16 56 16 56 40 48 40"/></svg>
-                    <span class = "previewer__span">Print</span>
-                </a>
-                <!-- make close into circle w/light red bg -->
-                <a class="previewer__btn closeBtn">
-                    <svg class = "previewer__svg close__svg" alt = "close symbol" width="800px" height="800px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000"><line x1="16" y1="16" x2="48" y2="48"/><line x1="48" y1="16" x2="16" y2="48"/></svg>
-                </a>
-            </section>
-             
+        
 
-            <section class="previewer__section document__section">
-                <!-- <div class="iframeCont"> -->
-                    <iframe id="iframe" frameborder="0" src="resume/ExampleResume.pdf#toolbar=0&"></iframe>
-                <!-- </div> -->
-            </section>
-        </div>
-
-        <div class="container aboutme__container" id = "aboutme">
+        <div class="container aboutme__container" id="aboutme">
             <section class="aboutme__section">
                 <div class="left aboutme__left">
                     <h2 class="aboutme__h2">About Me</h2>
@@ -106,12 +83,8 @@
             </section>
         </div>
 
-        <div class="container examplework__container" id = "exampleWork">
-        
-            
-            
-                
-           
+        <div class="container examplework__container" id="exampleWork">
+
             <section class="examplework__section">
                 <h2 class="examplework__h2">Example Work</h2>
                 <div id="carouselExampleCaptions" class="carousel slide">
@@ -149,13 +122,13 @@
 
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     
                 </div>
                    
@@ -167,8 +140,41 @@
         </div> -->
       
     </main>
+    
+    
+    <!-- PREVIEWER  MODAL -->
 
-    <footer>
+    <div class="previewer__component" id="previewerCont" role="dialogue" aria-hidden="true" aria-describedby="">
+        <section class="previewer__section button__section">
+            <a class="previewer__btn downloadBtn" href = "resume/ExampleResume.pdf" download = "ExampleResume.pdf">
+                <svg class = "previewer__svg download__svg" alt = "download symbol" width="800px" height="800px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000"><rect x="8" y="40" width="48" height="16"/><polyline points="24 24 32 32 40 24"/><line x1="32" y1="8" x2="32" y2="32"/><line x1="16" y1="48" x2="20" y2="48"/><line x1="24" y1="48" x2="28" y2="48"/></svg>
+                <span class = "previewer__span">Download</span>
+            </a>
+            <a class="previewer__btn printBtn" onclick="printJS('resume/ExampleResume.pdf')">
+                <svg class = "previewer__svg print__svg" alt = "print image" width="800px" height="800px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000"><rect x="16" y="32" width="32" height="24"/><line x1="24" y1="48" x2="40" y2="48"/><line x1="24" y1="40" x2="40" y2="40"/><polyline points="20 16 20 8 44 8 44 16"/><polyline points="16 40 8 40 8 16 56 16 56 40 48 40"/></svg>
+                <span class = "previewer__span">Print</span>
+            </a>
+            <!-- make close into circle w/light red bg -->
+            <a class="previewer__btn closeBtn">
+                <svg class = "previewer__svg close__svg" alt = "close symbol" width="800px" height="800px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000"><line x1="16" y1="16" x2="48" y2="48"/><line x1="48" y1="16" x2="16" y2="48"/></svg>
+            </a>
+        </section>
+    
+        <section class="previewer__section document__section">
+            <!-- <div class="iframeCont"> -->
+                <iframe id="iframe" frameborder="0" src="resume/ExampleResume.pdf#toolbar=0&"></iframe>
+            <!-- </div> -->
+        </section>
+    </div>
+
+
+
+
+
+
+
+    <footer id ="footer">
+        <div class="container footer__container"></div>
 
     </footer>
 
