@@ -1,0 +1,26 @@
+{
+  "name": "localrepository",
+  "version": "1.0.0",
+  "description": "portfolio",
+  "main": "index.js",
+  "type":"module",
+  
+  "scripts": {
+   
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nnall/Portfolio.git"
+  },
+  "author": "Nick Nall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nnall/Portfolio/issues"
+  },
+  "homepage": "https://github.com/nnall/Portfolio#readme",
+  "dependencies": {
+    "a11y-dialog": "^7.5.2",
+    "type":"module"
+    
+  }
+}

@@ -18,24 +18,8 @@ const pageLinks = document.querySelectorAll('a:not(.nav__list__link)'); // ALL <
 const btns = document.querySelectorAll('button:not(.nav__btn)');  // All <button> elements except the .nav__btn
 /* dont want .nav__btn getting .mobileClickEffect settings class when clicked*/ 
 
-
-
-// function for changing aria attb's while modal is open
-const aria = function(){
-
-    //make <main> inaccessible and <.previewer__container> accessible. 
-    main.setAttribute('aria-hidden', 'true');
-    previewerCont.setAttribute('aria-hidden', 'false');
-
-
-// .hero__resumeBtn get an aria-expanded = "true"
-
-// Upon clicking the closeBtn, the aria settings need to be put back to the way the html has them. 
-
-// .hero__resumeBtn goes back to aria-expanded = "false". 
-// .previewer__container's aria-hidden = "true"
-}
-
+// import A11yDialog from 'a11y-dialog';
+import 'a11y-dialog';
 
 
 
