@@ -28,13 +28,15 @@ import 'a11y-dialog';
 //getting error with this import statement: 'cannot use import statement outside of a module'
 
 // added a bundler  - webpack - per recommendations on a11y-dialog instructions page. 
-// in order for the bundler to work, created a 'build' script.. to be run in the command line (npm run build)
-// this script run will run the webpack and hopefully integrate the a11y-dialog module with index.js and resolve the 'cannot use import statement outside of a module' error from the above import statement. 
+// in order for the bundler to work, created a 'build' script ("build": "webpack") to be run in the command line (npm run build)
+// this script will ideally run the webpack and hopefully integrate the a11y-dialog module with index.js and resolve the 'cannot use import statement outside of a module' error from the above import statement. 
 
 
-// the script will output its own 'main.js' file, which will ultimately be the one holding our 'final' js script..
+// functionally, the build script compiles what is in the index.js file and outputs its own 'main.js' file, which will ultimately be the one holding our 'final' js script..
 
 // which means the index.html needs to reference that main.js file instead of the index.js
+
+// ERROR: When I attempted npm run build (running the script), I got an error. 
 
 
 
