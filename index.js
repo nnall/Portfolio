@@ -19,8 +19,11 @@ const btns = document.querySelectorAll('button:not(.nav__btn)');  // All <button
 /* dont want .nav__btn getting .mobileClickEffect settings class when clicked*/ 
 
 // import A11yDialog from 'a11y-dialog';
-import 'a11y-dialog';
+// import A11yDialog from 'a11y-dialog';
 
+// Can always use a cdn instead.. 
+
+// import 'a11y-dialog';
 
 
 

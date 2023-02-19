@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "portfolio",
   "main": "index.js",
-  "type":"module",
   
   "scripts": {
    
@@ -19,8 +18,7 @@
   },
   "homepage": "https://github.com/nnall/Portfolio#readme",
   "dependencies": {
-    "a11y-dialog": "^7.5.2",
-    "type":"module"
+    "a11y-dialog": "^7.5.2"
     
   }
 }
