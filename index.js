@@ -23,21 +23,17 @@ const btns = document.querySelectorAll('button:not(.nav__btn)');  // All <button
 
 // Can always use a cdn instead.. 
 
-import 'a11y-dialog';
 
-//getting error with this import statement: 'cannot use import statement outside of a module'
+// import {multiply} from './math.js';
 
-// added a bundler  - webpack - per recommendations on a11y-dialog instructions page. 
-// in order for the bundler to work, created a 'build' script ("build": "webpack") to be run in the command line (npm run build)
-// this script will ideally run the webpack and hopefully integrate the a11y-dialog module with index.js and resolve the 'cannot use import statement outside of a module' error from the above import statement. 
+// export function square(x) {
+//   return multiply(x, x);
+// }
 
 
-// functionally, the build script compiles what is in the index.js file and outputs its own 'main.js' file, which will ultimately be the one holding our 'final' js script..
+// a11y-dialog does not import because js has no idea where 'a11y-dialog' is located.. even though it is installed in the package.json file.
 
-// which means the index.html needs to reference that main.js file instead of the index.js
-
-// ERROR: When I attempted npm run build (running the script), I got an error. 
-
+// so i needed to add a 'bundler'.. webpack was too complicated, so I deleted and now have parcel. 
 
 
 
@@ -68,26 +64,26 @@ closeBtn.addEventListener('click', ()=>{
 
 
 
+ //................................. ACCESSIBILITY ................................//
+
+// start the 'parcel' dev server in terminal 
+
+
+// import A11yDialog from 'a11y-dialog' /*<-- import */
+
+// const container = document.querySelector('#my-dialog-container');
+// const dialog = new A11yDialog(container);
+
+
+
 
 
 
 // using 1300px 'desktop breakpoint bc just after the widest horizontal tablet width (smallest laptop widths start @ ~2300px)
 
 
-// Bootstrap Carousel 
-// $('.carousel').carousel({});
-// document.addEventListener("DOMContentLoaded", function(){
-    
-//   });
 
 
-
-// $(function () {
-//     $('.carousel').carousel({interval: 2000})
-// })
-
-
- //................................. ACCESSIBILITY ................................//
 
 
 
