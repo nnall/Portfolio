@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "portfolio",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    
   },
   "repository": {
     "type": "git",
@@ -16,5 +14,7 @@
   "bugs": {
     "url": "https://github.com/nnall/Portfolio/issues"
   },
-  "homepage": "https://github.com/nnall/Portfolio#readme"
+  "homepage": "https://github.com/nnall/Portfolio#readme",
+  "devDependencies": {
+  }
 }

@@ -24,6 +24,13 @@ const btns = document.querySelectorAll('button:not(.nav__btn)');  // All <button
 // Can always use a cdn instead.. 
 
 
+// import A11yDialog from 'a11y-dialog' /*<-- import */
+
+// const container = document.querySelector('#my-dialog-container');
+// const dialog = new A11yDialog(container);
+
+
+
 // import {multiply} from './math.js';
 
 // export function square(x) {
@@ -69,10 +76,7 @@ closeBtn.addEventListener('click', ()=>{
 // start the 'parcel' dev server in terminal 
 
 
-// import A11yDialog from 'a11y-dialog' /*<-- import */
 
-// const container = document.querySelector('#my-dialog-container');
-// const dialog = new A11yDialog(container);
 
 
 
