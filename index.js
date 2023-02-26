@@ -16,31 +16,6 @@ const printBtn = document.querySelector('.printBtn');
 const navListLinks = document.querySelectorAll('.nav__list__link') // All .nav__list__links
 const pageLinks = document.querySelectorAll('a:not(.nav__list__link)'); // ALL <a> on page (NOT including NAV <a> <-- see above)
 const btns = document.querySelectorAll('button:not(.nav__btn)');  // All <button> elements except the .nav__btn
-/* dont want .nav__btn getting .mobileClickEffect settings class when clicked*/ 
-
-// import A11yDialog from 'a11y-dialog';
-// import A11yDialog from 'a11y-dialog';
-
-// Can always use a cdn instead.. 
-
-
-// import A11yDialog from 'a11y-dialog' /*<-- import */
-
-// const container = document.querySelector('#my-dialog-container');
-// const dialog = new A11yDialog(container);
-
-
-
-// import {multiply} from './math.js';
-
-// export function square(x) {
-//   return multiply(x, x);
-// }
-
-
-// a11y-dialog does not import because js has no idea where 'a11y-dialog' is located.. even though it is installed in the package.json file.
-
-// so i needed to add a 'bundler'.. webpack was too complicated, so I deleted and now have parcel. 
 
 
 
@@ -72,15 +47,6 @@ closeBtn.addEventListener('click', ()=>{
 
 
  //................................. ACCESSIBILITY ................................//
-
-// start the 'parcel' dev server in terminal 
-
-
-
-
-
-
-
 
 
 // using 1300px 'desktop breakpoint bc just after the widest horizontal tablet width (smallest laptop widths start @ ~2300px)

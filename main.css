@@ -267,7 +267,11 @@ then just take off the ':not(.previewer__container)' part of the container/secti
 }
 */
 
-
+#my-dialog-container{
+    /* border: 2px solid red; */
+    /* width:90%;
+    max-width:1150px; */
+}
 
 
 
@@ -301,6 +305,7 @@ then just take off the ':not(.previewer__container)' part of the container/secti
 
 
 /* ....................PREVIEWER BUTTON SECTION................ */
+
 
 
 
