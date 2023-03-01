@@ -571,7 +571,7 @@ put 'mobile' version pictures in it initially, then, at some breakpoint, switch 
     left:.5rem;
     bottom:1.5rem;
     margin:0 auto;
-    padding:.5rem;
+    padding:.75rem 1.5rem;
     max-width:300px;
     z-index:100;
 }
@@ -615,21 +615,55 @@ put 'mobile' version pictures in it initially, then, at some breakpoint, switch 
 /* .................CONTACT CONTAINER ...................*/
 
 .contact__container{
-    /* border: 1px solid blue; */
-    /* display:block; */
+    border: 5px solid green;;
+    display:block;
+}
+
+.contact__section{
+    min-height:90%;
+    border:1px solid red;
+    display:flex;
+    flex-direction:column;
+    /* overflow:hidden; */
+}
+
+form{
     display:flex;
     flex-direction:column;
     justify-content: flex-start;
     align-items: flex-start;
+    flex-grow:1;
+    border: 1px solid blue;
+    max-height:100%;
 }
 
-.contact__container > *{
+form >*:not(button){
     min-width:100%;
 }
 
 .form-floating{
-    position:relative;
+    /* position:relative; */
 }
+
+.form-control{
+    font-size:1.2rem;
+}
+
+.form__message{
+    border: 1px solid orange;
+    flex:1;
+    /* position:relative; */
+    flex-direction: column; /* <--- made flex with 'd-flex' class */
+    max-height:100%;
+}
+
+/* textarea of .form__message div*/
+#floatingTextArea{
+    /* flex:1; */
+    /* height:100%; */
+    background-color: green;;
+}
+
 
 .icon{
     position:absolute;
@@ -644,15 +678,9 @@ put 'mobile' version pictures in it initially, then, at some breakpoint, switch 
     
 }
 
-.form-control{
-    font-size:1.2rem;
 
-    /* padding-top:3rem; */
-}
 
-#floatingTextArea{
-    flex-grow: 1;
-}
+
 
 .btn{
     background-color:white;
