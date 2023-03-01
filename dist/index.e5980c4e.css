@@ -21,7 +21,6 @@
   --boxShadowClicked: #0006;
   --defaultBorder: 2px solid var(--tanGreyDark);
   --borderThin: 1px solid var(--tanGreyDark);
-  font-size: 62.5px;
 }
 
 html {
@@ -195,7 +194,7 @@ h1 {
   max-width: 1150px;
   min-height: max-content;
   max-height: max-content;
-  border-radius: 30px;
+  border-radius: 20px;
   padding: 1rem;
   display: none;
   position: fixed;

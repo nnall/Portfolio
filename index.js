@@ -33,6 +33,22 @@ navBtn.addEventListener('click', function(){
     }
  })
 
+// Clicking outside of navList while it's open closes it
+ body.addEventListener('click', function(e){
+// as long as click is not on the nav__btn, nor is it on a nav__list__link, then we need to remove 'displayNav' class from the navList
+
+
+    if(!e.target.classList.contains('nav__svg') && !e.target.classList.contains('nav__list__link')){
+        // console.log('you did not click the nav button nor the nav link')
+
+        if(navList.classList.contains('displayNav')){
+            navList.classList.remove('displayNav');
+            navBtn.setAttribute('aria-expanded', 'false')
+        }
+    } 
+
+ });
+
 
 //  OPENS/CLOSES PREVIEWER
 resumeBtn.addEventListener('click', ()=>{
@@ -45,6 +61,28 @@ closeBtn.addEventListener('click', ()=>{
 })
 
 
+// add event listener to the body, which has an 'if' for 'if' the previewerComp.classList.contains('displayPreviewer'), and if it does, remove it. and if not, return (ternary operator)
+
+// the modal is supposed to have this 'click outside the mdoal to close it' funcitonality built in, as part of its 'data-a11y-dialog-hide' attribute. It may work, but bc the entire a11y-dialog modal has not yet been imported inot my javascript, I don't know for sure whether it works - its not working now, but I havent successfully imported it yet either. 
+
+
+
+
+// body.addEventListener('click', function(e){
+        
+//     if(!e.classList)
+
+//     if(previewerComp.classList.contains('displayPreviewer')){
+//         previewerComp.classList.remove('displayPreviewer')
+//     } else{
+//         return;
+//     }
+     
+    
+// })
+
+
+
 
  //................................. ACCESSIBILITY ................................//
 
@@ -52,7 +90,7 @@ closeBtn.addEventListener('click', ()=>{
 // using 1300px 'desktop breakpoint bc just after the widest horizontal tablet width (smallest laptop widths start @ ~2300px)
 
 
-
+// 
 
 
 

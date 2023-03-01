@@ -171,15 +171,13 @@
 
 
 
-    <div id="my-dialog-container" class="previewer__component" aria-labelledby="my-dialog-container" aria-hidden="true">
+    <div id="my-dialog-container" data-a11y-dialog="my-dialog-container" class="previewer__component" aria-labelledby="my-dialog-container" aria-hidden="true">
         <!-- 2. The dialog overlay -->
         <div data-a11y-dialog-hide=""></div>
         <!-- 3. The actual dialog -->
         <div role="document">
             <!-- 5. The dialog title -->
             <!-- <h1 id="your-dialog-title-id">Your dialog title</h1> -->
-            <!-- 6. Dialog content -->
-
             <section class="previewer__section button__section">
                 <a class="previewer__btn downloadBtn" href="/resume/ExampleResume.pdf" download="ExampleResume.pdf">
                     <svg class="previewer__svg download__svg" alt="download symbol" width="800px" height="800px" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000"><rect x="8" y="40" width="48" height="16"></rect><polyline points="24 24 32 32 40 24"></polyline><line x1="32" y1="8" x2="32" y2="32"></line><line x1="16" y1="48" x2="20" y2="48"></line><line x1="24" y1="48" x2="28" y2="48"></line></svg>
@@ -196,7 +194,7 @@
     
                 </button>
             </section>
-        
+            <!-- 6. Dialog content -->
             <section class="previewer__section document__section">
         
                     <iframe id="iframe" frameborder="0" src="/resume/ExampleResume.pdf#toolbar=0&"></iframe>

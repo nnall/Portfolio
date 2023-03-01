@@ -8,7 +8,7 @@
 
 
 :root{
-    font-size: 62.5; /*1rem always = 10px*/
+    /* font-size: 62.5;   1rem always = 10px */
 
     /* ......COLOR VARIABLES..... */
     --darkBlue: rgb(30, 66, 88);
@@ -279,7 +279,7 @@ then just take off the ':not(.previewer__container)' part of the container/secti
     display:none;
     background-color: var(--white);
     border: 2px solid var(--tanGreyDark);
-    border-radius: 30px;
+    border-radius: 20px;
     padding:1rem 1rem;
 
     position:fixed;
@@ -453,13 +453,10 @@ make exampleWork Section be a taller that other secitons/not determined by its c
     padding-bottom:0; 
     justify-content:flex-start;
     
-    
 }
 
-
-
 .examplework__section{
-    border:2px solid blue;
+    /* border:2px solid blue; */
     height:87%;
     width:95%;
     max-width:80rem;
@@ -473,7 +470,7 @@ make exampleWork Section be a taller that other secitons/not determined by its c
     font-size: 2.5em;
    display:inline-block;
     margin:0;
-    padding:1rem;
+    padding:.5rem .5rem 1rem .5rem;
     
 }
 
@@ -487,16 +484,13 @@ so I took the H2 out of the parent .examplework__section, at which point it allo
 /* container */
 .carousel{
     flex-grow:1;
-    /* flex-shrink: 1;
-    flex-basis:100%; */
-   
-    border:2px solid red;
+    border:1px solid var(--darkGrey);
     
 }
 
 .carousel-inner{
    height:100%;
-   border:2px solid orange;
+   /* border:2px solid orange; */
    /* position:relative; */
     
 }
@@ -534,46 +528,80 @@ so I took the H2 out of the parent .examplework__section, at which point it allo
 
 
 .carousel-item{           /* <--- bootstrap class, undoing position:absolute*/
-    border: 1px solid green;
+    /* border: 1px solid green; */
+    /* background-color: green;; */
+    background-size:cover;
+    background-position:center top;
+
     position:static;      
     height:100%;
+    overflow:hidden;
+}
+
+/* instead of just using 'desktop' picture for each slide... 
+put 'mobile' version pictures in it initially, then, at some breakpoint, switch them all to a desktop version picture
+*/
+
+.carousel-item__1{
+    background-image: url(img/CarOneMob.png);
+}
+
+.carousel-item__2{
+    background-image: url(img/CarTwoMob.png);
+}
+
+.carousel-item__3{
+    background-image: url(img/CarThreeMob.png);
+}
+
+.carousel-item__4{
+    background-image:url(img/CarFourMob.png);
+}
+
+.carousel-item__5{
+    background-image:url(img/CarFiveMob.png);
 }
 
 
-.carousel__img{
-    /* max-height:100%;   */
-
-    /* to prevent vertical overflow of img, out of .examplework__section */
-    position:absolute;
-    top:0;
-    right:0;
-    bottom:0;
-    left:0;
-}
 
 .carousel-caption{
-    background-color: aqua;
-    /* border:2px solid red; */
+    background-color: var(--darkGrey);
+    border:1px solid var(--white);
     right:.5rem;
     left:.5rem;
-    bottom:2rem;
+    bottom:1.5rem;
     margin:0 auto;
     padding:.5rem;
-    max-width:456px;
+    max-width:300px;
+    z-index:100;
+}
+
+.carousel-caption h5, .carousel-caption p{
+    color: var(--tanGrey);
 }
 
 .carousel-caption h5{
-    font-size:1.5em;
-    color:var(--tanGreyDark);
+    font-size:1.3em;
 }
+
 
 .carousel-caption p{
-    font-size:1em;
-    margin-block-start:0;
-    margin-block-end:0;
-    
+    font-size:.8em;
+    text-align: left;
+    margin-bottom:.5rem; 
 }
 
+.captionLink{
+    padding:0 .5rem;
+    background-color: unset;
+    border:1px solid var(--white);
+    font-size:1.25rem;
+}
+
+.captionLink:hover{
+    background-color: white;
+    color:var(--darkGrey);
+}
 
 .carousel-indicators{
     margin-bottom:0;
@@ -584,17 +612,62 @@ so I took the H2 out of the parent .examplework__section, at which point it allo
     background-color:var(--tanGreyDark);
 }
 
-/* ........................ TEST CONTAINER ...................... */
-.test__container{
-    border:1px solid blue;
+/* .................CONTACT CONTAINER ...................*/
+
+.contact__container{
+    /* border: 1px solid blue; */
+    /* display:block; */
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-.test__child{
-    border:1px solid pink;
-    height:75%;
+.contact__container > *{
+    min-width:100%;
+}
+
+.form-floating{
+    position:relative;
+}
+
+.icon{
+    position:absolute;
+    color:var(--darkBlue);
+    top:1.35rem;
+    left:1rem;
+}
+
+.form-floating label, .form-floating .form-control{
+    left:.5rem;
+    padding-left:3rem;
+    
+}
+
+.form-control{
+    font-size:1.2rem;
+
+    /* padding-top:3rem; */
+}
+
+#floatingTextArea{
+    flex-grow: 1;
+}
+
+.btn{
+    background-color:white;
+    font-size:2rem;
+    color:var(--darkBlue);
+    border-color: var(--darkBlue);
+
+}
+
+.btn:hover{
+    background-color: var(--darkBlue);
 }
 
 
+    
 
 
 /* ........................ MEDIA QUERIES ...................... */
@@ -635,6 +708,32 @@ so I took the H2 out of the parent .examplework__section, at which point it allo
         margin-top:3rem;
         flex-direction:row;
     }
+
+    .carousel-item{ 
+        background-position:center top;
+    }
+
+    .carousel-item__1{
+        background-image:url(img/CarOneDesk.png);
+    }
+
+    .carousel-item__2{
+        background-image:url(img/CarTwoDesk.png);
+    }
+
+    .carousel-item__3{
+        background-image:url(img/CarThreeDesk.png);
+    }
+    
+    .carousel-item__4{
+        background-image:url(img/CarFourDesk.png);
+    }
+
+    .carousel-item__5{
+        background-image:url(img/CarFiveDesk.png);
+    }
+
+
 }
 
 @media(min-width:560px){
@@ -649,7 +748,7 @@ so I took the H2 out of the parent .examplework__section, at which point it allo
 /* .................. 1300px DESKTOP BREAKPOINT............... */
 @media(min-width:1300px){
     /* affects nav <a> (.nav__list__link) & <a> ('.btn' classes) */
-    a:not(.closeBtn):hover, .hero__resumeBtn:hover     
+    a:not(.closeBtn):not(.captionLink):hover, .hero__resumeBtn:hover     
     {   text-decoration: none;;
         color:white;
         margin:-.15rem .15rem .15rem -.15rem;       
