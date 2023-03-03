@@ -73,19 +73,16 @@
 
         <div class="container aboutme__container" id="aboutme">
             <section class="aboutme__section">
-                <div class="left aboutme__left">
+                <div class="aboutme__box">
                     <h2 class="aboutme__h2">About Me</h2>
                     <p class = "aboutme__p">I'm Nick and I'm a self-taught front-end web-developer from Ocean Springs, Mississippi. My skills are in HTML, CSS & Javascript, with proficiency in responsive web and web-application design. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis hic pariatur nam officia! </p>
-
                     
-                    <div class="aboutme__left__btnContainer">
-                        <a class="about__me">About Me</a>
+                    
+                    <div class="aboutme__btnContainer">
+                        <a class="aboutme__link">About Me</a>
                     </div>
-
+                   
                 </div>
-                <!-- <div class="right aboutme__right">
-                    <img src="#" alt="#" class="aboutme__img">
-                </div> -->
             </section>
         </div>
 
@@ -190,14 +187,14 @@
                         <input type="text" class="form-control" id="floatingPhone" placeholder="Phone">
                         <label for="floatingPhone">Phone</label>
                     </div>
-                    <div class="form-floating mb-3 form__message d-flex">
+                    <div class="form-floating mb-3 form__message"> <!-- <-- no more 'flex class' -->
                         <i class="fa fa-thin fa-message icon"></i>
-                        <textarea class="form-control" id="floatingTextArea" cols="30" rows="10" placeholder="Your Message"></textarea>
+                        <textarea class="form-control" id="floatingTextArea" cols="30" rows="2" placeholder="Your Message"></textarea>
                         <label for="floatingTextArea">Your Message</label>
                     </div>
-                    <div class="form-floating mb-3">
-                        <button type="button" class="btn btn-outline-dark">Submit</button>
-                    </div>
+                    
+                    <button type="button" class="btn btn-outline-dark">Submit</button>
+                    
 
                 </form>
             </section>
@@ -235,15 +232,101 @@
                 <iframe id="iframe" frameborder="0" src="resume/ExampleResume.pdf#toolbar=0&"></iframe>
             </section>
             
-
         </div>
     </div>
 
+    <footer id ="footer" class="text-center text-lg-start bg-light text-muted">
+        <div class="container footer__container"> <!-- border red -->
 
-
-    <footer id ="footer">
-        <div class="container footer__container"></div>
-
+            <div class="footer__section-2"> <!--border green-->
+                
+                <div class="text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row container-md mt-3">
+                        <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <!-- Content -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>Company name
+                            </h6>
+                            <p>
+                            Here you can use rows and columns to organize your footer content. Lorem ipsum
+                            dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+                
+                        <!-- Grid column -->
+                        <div class="col-sm-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                            Products
+                            </h6>
+                            <p>
+                            <a href="#!">Angular</a>
+                            </p>
+                            <p>
+                            <a href="#!">React</a>
+                            </p>
+                            <p>
+                            <a href="#!">Vue</a>
+                            </p>
+                            <p>
+                            <a href="#!">Laravel</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+                
+                        <!-- Grid column -->
+                        <div class="col-sm-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                            </h6>
+                            <p>
+                            <a href="#!">Pricing</a>
+                            </p>
+                            <p>
+                            <a href="#!">Settings</a>
+                            </p>
+                            <p>
+                            <a href="#!">Orders</a>
+                            </p>
+                            <p>
+                            <a href="#!">Help</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+                
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                            <p><i class="fas fa-home me-3"></i>Ocean Springs, MS 39564</p>
+                            <p><i class="fas fa-envelope me-3"></i>nicholas.nall@gmail.com</p>
+                            <p><i class="fas fa-phone me-3"></i>+ 228-334-9173</p>
+                            <!-- <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p> -->
+                        </div>
+                    </div>
+                    <!-- Grid row -->
+                </div>
+            </div>
+            <!-- Section: Links  -->
+            <div class="footer__section-1 d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                
+                <!-- Right -->
+                <div class ="d-flex justify-content-between" style ="width:200px">
+                    <a class = "footer__icon" href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class = "footer__icon" href="">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a class = "footer__icon" href="">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
 
 <!-- .............. Scripts ............... -->

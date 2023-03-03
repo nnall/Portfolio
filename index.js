@@ -61,36 +61,7 @@ closeBtn.addEventListener('click', ()=>{
 })
 
 
-// add event listener to the body, which has an 'if' for 'if' the previewerComp.classList.contains('displayPreviewer'), and if it does, remove it. and if not, return (ternary operator)
 
-// the modal is supposed to have this 'click outside the mdoal to close it' funcitonality built in, as part of its 'data-a11y-dialog-hide' attribute. It may work, but bc the entire a11y-dialog modal has not yet been imported inot my javascript, I don't know for sure whether it works - its not working now, but I havent successfully imported it yet either. 
-
-
-
-
-// body.addEventListener('click', function(e){
-        
-//     if(!e.classList)
-
-//     if(previewerComp.classList.contains('displayPreviewer')){
-//         previewerComp.classList.remove('displayPreviewer')
-//     } else{
-//         return;
-//     }
-     
-    
-// })
-
-
-
-
- //................................. ACCESSIBILITY ................................//
-
-
-// using 1300px 'desktop breakpoint bc just after the widest horizontal tablet width (smallest laptop widths start @ ~2300px)
-
-
-// 
 
 
 

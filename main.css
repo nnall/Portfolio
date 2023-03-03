@@ -60,9 +60,6 @@ p{
 }
 
 
-
-
-
 /* turn back to header being included here, undo margin-top adjustments */
 .container{
     padding:2rem;
@@ -83,7 +80,7 @@ section:not(.previewer__section){
 }
 
 /* section children with preceding sibling get a margin-top, also sub-sections' children with preceding sibling gets same margin-top */
-section:not(.examplework__section):not(.previewer__section) > *, .left > *, .right > *{    
+section:not(.examplework__section):not(.previewer__section) > * {   
     margin-bottom:1rem; 
 }
 
@@ -108,11 +105,6 @@ a, .hero__resumeBtn {
     text-decoration:none;
 }
 
-/* 
-
-
-*/
-
 
 /* ................ non-Nav <a> links.................. */
 
@@ -120,6 +112,7 @@ a:not(.nav__list__link), .hero__resumeBtn{
    color:white;
 }
 
+/* Mobile mode - no hover effect (margin change), but BG color still changes, and no :active state margin change either.  */
 a:not(.nav__list__link):active{
     color:white;
     background-color: rgb(30, 66, 88);
@@ -249,31 +242,6 @@ h1{
 
 
 /* ......................... PREVIEWER ......................... */
-
-/* 
-move '.previewer__container' class to an outside parent of  what is currently .previewer container.. 
-also move to that outside class, the display:
-
-then just take off the ':not(.previewer__container)' part of the container/section settings
-*/
-/*
-.previewer__container{
-    position:fixed;
-    z-index:250; <!--to be above the <header> (z-index:200)-->
-    top:0;
-    left:0;
-    background-color:rgb(0,0,0, .4);
-    display:none;
-}
-*/
-
-#my-dialog-container{
-    /* border: 2px solid red; */
-    /* width:90%;
-    max-width:1150px; */
-}
-
-
 
 .previewer__component{ /* <-- change this to new name for child of new .previewer__container, keep settings*/
     display:none;
@@ -422,24 +390,25 @@ then just take off the ':not(.previewer__container)' part of the container/secti
 
 
 /* box component */
-.aboutme__left{
+.aboutme__box{
     /* border:1px solid green; */
-   border: var(--defaultBorder);
+    border: var(--defaultBorder);
     background-color:var(--tanGrey);
     padding:2rem 2rem 1.5rem 2rem; 
     max-width:40rem;
     margin:0 auto;
 }
 
-.aboutme__left__btnContainer{
-    margin-top:2.0rem;
-    display:inline-block;
-}
-
 .aboutme__p{
     color:black;
     font-weight:400;
 }
+
+.aboutme__btnContainer{
+    margin-top:2rem;
+    display:inline-block;
+}
+
 
 
 /* .................EXAMPLE WORK CONTAINER ...................*/
@@ -528,8 +497,6 @@ so I took the H2 out of the parent .examplework__section, at which point it allo
 
 
 .carousel-item{           /* <--- bootstrap class, undoing position:absolute*/
-    /* border: 1px solid green; */
-    /* background-color: green;; */
     background-size:cover;
     background-position:center top;
 
@@ -615,25 +582,16 @@ put 'mobile' version pictures in it initially, then, at some breakpoint, switch 
 /* .................CONTACT CONTAINER ...................*/
 
 .contact__container{
-    border: 5px solid green;;
     display:block;
 }
 
 .contact__section{
     min-height:90%;
-    border:1px solid red;
     display:flex;
     flex-direction:column;
-    /* overflow:hidden; */
 }
 
 form{
-    display:flex;
-    flex-direction:column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-grow:1;
-    border: 1px solid blue;
     max-height:100%;
 }
 
@@ -641,29 +599,9 @@ form >*:not(button){
     min-width:100%;
 }
 
-.form-floating{
-    /* position:relative; */
-}
-
 .form-control{
     font-size:1.2rem;
 }
-
-.form__message{
-    border: 1px solid orange;
-    flex:1;
-    /* position:relative; */
-    flex-direction: column; /* <--- made flex with 'd-flex' class */
-    max-height:100%;
-}
-
-/* textarea of .form__message div*/
-#floatingTextArea{
-    /* flex:1; */
-    /* height:100%; */
-    background-color: green;;
-}
-
 
 .icon{
     position:absolute;
@@ -675,12 +613,7 @@ form >*:not(button){
 .form-floating label, .form-floating .form-control{
     left:.5rem;
     padding-left:3rem;
-    
 }
-
-
-
-
 
 .btn{
     background-color:white;
@@ -695,7 +628,17 @@ form >*:not(button){
 }
 
 
-    
+
+/* ....................... FOOTER .................... */
+
+.footer__container{
+    height:unset;
+}
+
+.footer__section-2{
+    margin:none;
+}
+
 
 
 /* ........................ MEDIA QUERIES ...................... */
@@ -720,7 +663,7 @@ form >*:not(button){
 @media(min-width:420px){
     /* ...... GLOBAL ELEMENTS........ */
 
-    section:not(.examplework__section):not(.previewer__section) > *, .left > *, .right > *{
+    section:not(.examplework__section):not(.previewer__section) > *{
         margin-bottom:2rem;
     }
 
@@ -776,7 +719,7 @@ form >*:not(button){
 /* .................. 1300px DESKTOP BREAKPOINT............... */
 @media(min-width:1300px){
     /* affects nav <a> (.nav__list__link) & <a> ('.btn' classes) */
-    a:not(.closeBtn):not(.captionLink):hover, .hero__resumeBtn:hover     
+    a:not(.closeBtn):not(.captionLink):not(.footer__icon):hover, .hero__resumeBtn:hover     
     {   text-decoration: none;;
         color:white;
         margin:-.15rem .15rem .15rem -.15rem;       
@@ -796,7 +739,7 @@ form >*:not(button){
 
 
     /* ............active/click state............. */
-    a:not(.closedBtn):active{
+    a:not(.closedBtn):not(.captionLink):active{
     /* color: white; */
     background-color: var(--darkBlue);
     margin:0;                                     /*<-- move back to original position when clicked*/
