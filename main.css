@@ -80,9 +80,10 @@ section:not(.previewer__section){
 }
 
 /* section children with preceding sibling get a margin-top, also sub-sections' children with preceding sibling gets same margin-top */
-section:not(.examplework__section):not(.previewer__section) > * {   
-    margin-bottom:1rem; 
-}
+
+.aboutme__section > *, .contact__section > * {
+    margin-bottom:1rem;
+} 
 
 /* all <button> and <a> */
 button, a{
@@ -98,7 +99,6 @@ button, a{
 }
 
 a, .hero__resumeBtn {
-    /* font-size:1.4em;               */
     padding: .75rem;
     background-color:var(--medBlue);
     display:inline-block;
@@ -112,14 +112,18 @@ a:not(.nav__list__link), .hero__resumeBtn{
    color:white;
 }
 
-/* Mobile mode - no hover effect (margin change), but BG color still changes, and no :active state margin change either.  */
-a:not(.nav__list__link):active{
+/* Mobile mode - no hover effect (margin change), but BG color still changes, and no :active state margin change either. MArgin change only for nav__list__links bc they have a box-shadow while unhovered  */
+
+
+
+.hero__btn:active, .aboutme__link:active, .previewer__btn:active, .footer__link:active{
     color:white;
     background-color: rgb(30, 66, 88);
     stroke: white;
-    text-decoration:none;
-    
+    text-decoration:none; 
 }
+
+
 
 
 /* ....................................... HEADER ................................... */
@@ -200,7 +204,8 @@ header{
     color:white;
     background-color: rgb(30, 66, 88);
     box-shadow:.1em .1em var(--boxShadow);
-    margin:.15rem -.15rem -.15rem .15rem;
+    
+    transform:translate(.15rem, -.15rem);
     text-decoration:none;
 
 
@@ -231,7 +236,7 @@ h1{
    max-width:max-content;
    margin-top:2rem;
    display:flex;
-   flex-direction:column;
+   flex-direction:column; /* changes to row @420px */
    gap:1.5rem;
 }
 
@@ -262,19 +267,17 @@ h1{
 }
 
 .displayPreviewer{
-    display:block; /* <-- overwriting 'container' display:flex */
+    display:block; 
 }
 
 .previewer__section{
     display:flex;
-    flex-direction: column;
+    flex-direction: column; /* changes to row @520px */
     gap:.5rem;
 }
 
 
 /* ....................PREVIEWER BUTTON SECTION................ */
-
-
 
 
 .button__section{
@@ -307,11 +310,10 @@ h1{
     transition-delay: .05s;
 }
 
-.previewer__btn span{
+.previewer__btn span{    /* the word part of the btn */
     font-size:1em;
     font-weight: 500;
     color:var(--tanGreyDark);
-    vertical-align: bottom;;
     line-height:.8;;
     transition-delay: .05s;
 }
@@ -324,16 +326,15 @@ h1{
     right:1rem;
 }
 
-/*  */
 .previewer__btn:active{
     background-color: var(--darkBlue);
 }
 
-.downloadBtn:active span, .printBtn:active span{
+.previewer__btn:active span{
     color:white;
 }
 
-.downloadBtn:active svg, .printBtn:active svg{
+.previewer__btn:active svg{
     stroke:white;
 }
 
@@ -361,7 +362,6 @@ h1{
 #iframe{
     display:flex;
     justify-content: center;
-    /* position:relative; */
     min-width:100%; 
     min-height:100%; 
     /* max-height:40vh; */
@@ -371,7 +371,7 @@ h1{
 
 .aboutme__container{
     position:relative;
-    isolation:isolate;
+    isolation:isolate; /* so that ::after bg-img w/z-index:-1 still shows in container*/
 }
 
 .aboutme__container::after{
@@ -409,13 +409,11 @@ h1{
     display:inline-block;
 }
 
-
+/* -------------- you stopped refactoring here ---------------- */
 
 /* .................EXAMPLE WORK CONTAINER ...................*/
 
-/* 
-make exampleWork Section be a taller that other secitons/not determined by its content height?
-*/
+
 .examplework__container{
     padding-left:1rem;
     padding-right:1rem;
@@ -437,7 +435,7 @@ make exampleWork Section be a taller that other secitons/not determined by its c
 
 .examplework__h2{
     font-size: 2.5em;
-   display:inline-block;
+    display:inline-block;
     margin:0;
     padding:.5rem .5rem 1rem .5rem;
     
@@ -458,10 +456,7 @@ so I took the H2 out of the parent .examplework__section, at which point it allo
 }
 
 .carousel-inner{
-   height:100%;
-   /* border:2px solid orange; */
-   /* position:relative; */
-    
+   height:100%;  
 }
 
 .carousel-control-next, 
@@ -496,7 +491,7 @@ so I took the H2 out of the parent .examplework__section, at which point it allo
 }
 
 
-.carousel-item{           /* <--- bootstrap class, undoing position:absolute*/
+.carousel-item{    /* <--- bootstrap class, undoing position:absolute*/
     background-size:cover;
     background-position:center top;
 
@@ -633,11 +628,59 @@ form >*:not(button){
 
 .footer__container{
     height:unset;
+    padding-bottom:1rem;
 }
 
 .footer__section-2{
     margin:none;
 }
+
+.footer__section-1{
+    min-width:100%;  
+}
+
+.row{
+    margin:0;
+    padding:0;
+}
+
+.row > * {
+    padding:0;
+    text-align:left;
+    max-width:unset;
+    margin-right:2rem;
+}
+
+.footer__link{
+    margin-bottom:1rem;
+    font-size:1.2rem;
+}
+
+/* icon box */
+
+.footer__icons{
+    width:100%;
+    max-width:325px;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+.footer__icon{
+    background-color:unset;
+    padding:unset;
+}
+
+
+.footer__svg{
+    height:2.5rem;
+    width:2.5rem;
+    fill:var(--medBlue);
+    transition:all .1s ease-out;
+    transition-delay: .05s;
+}
+
+
+
 
 
 
@@ -663,7 +706,11 @@ form >*:not(button){
 @media(min-width:420px){
     /* ...... GLOBAL ELEMENTS........ */
 
-    section:not(.examplework__section):not(.previewer__section) > *{
+    /* section:not(.examplework__section):not(.previewer__section) > *{
+        margin-bottom:2rem;
+    } */
+
+    .aboutme__section > *, .contact__section > * {
         margin-bottom:2rem;
     }
 
@@ -719,44 +766,58 @@ form >*:not(button){
 /* .................. 1300px DESKTOP BREAKPOINT............... */
 @media(min-width:1300px){
     /* affects nav <a> (.nav__list__link) & <a> ('.btn' classes) */
-    a:not(.closeBtn):not(.captionLink):not(.footer__icon):hover, .hero__resumeBtn:hover     
-    {   text-decoration: none;;
+
+    .nav__list__link:hover, .hero__btn:hover, .aboutme__link:hover, .previewer__btn:hover, .footer__link:hover{
+        text-decoration: none;;
         color:white;
-        margin:-.15rem .15rem .15rem -.15rem;       
+        transform:translate(-.15rem, -.15rem);
         box-shadow:.23em .23em var(--boxShadow);
         font-weight:600;
         background-color: var(--darkBlue);
     }
 
-    a:not(.closeBtn):hover span{
+   .footer__icon:hover .footer__svg {
+        transform:translate(-.15rem, -.15rem);
+        /* text-shadow:.23em .23em var(--boxShadow); */
+        filter: drop-shadow(.10em .10em var(--boxShadow));
+        fill:var(--darkBlue);
+    }
+
+    .footer__icon:active .footer__svg{
+        transform: translate(0);
+        filter: drop-shadow(.05em .05em var(--boxShadow));
+        
+    }
+
+    .previewer__btn:hover span{
         color:white;
     }
 
-    a:not(.closeBtn):hover svg{
-        stroke: white;
+    .previewer__btn:hover svg{
+        stroke:white;
+    }
+
+    .closeBtn:hover{
+        background-color: var(--darkRed); 
+        cursor:pointer;
     }
 
 
+  
 
     /* ............active/click state............. */
-    a:not(.closedBtn):not(.captionLink):active{
+    a:not(.captionLink):not(.footer__icon):active{
     /* color: white; */
     background-color: var(--darkBlue);
-    margin:0;                                     /*<-- move back to original position when clicked*/
+    transform:translate(0);   /*<-- move back to original position when clicked*/
     box-shadow:.1em .1em var(--boxShadow);
     }
 
 
     
-    .closeBtn:hover{
-        background-color: var(--darkRed); 
-        cursor:pointer;
-    }
+   
     
-    .closeBtn:hover .close__svg{
-        stroke:white;
-        
-    }
+
 
     
 }

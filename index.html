@@ -21,7 +21,8 @@
 
      <!-- Font Awesome (form icons) -->
      <script src="https://kit.fontawesome.com/5ec1d0c022.js" crossorigin="anonymous"></script>
-    
+
+   
 </head>
 
 
@@ -75,7 +76,7 @@
             <section class="aboutme__section">
                 <div class="aboutme__box">
                     <h2 class="aboutme__h2">About Me</h2>
-                    <p class = "aboutme__p">I'm Nick and I'm a self-taught front-end web-developer from Ocean Springs, Mississippi. My skills are in HTML, CSS & Javascript, with proficiency in responsive web and web-application design. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis hic pariatur nam officia! </p>
+                    <p class = "aboutme__p">I'm Nick and I'm a self-taught front-end web-developer from Ocean Springs, Mississippi. My skills are in HTML, CSS & Javascript, with proficiency in responsive web and web-app design. I'm currenlty looking for a junior-level position to help expedite my learning, specifically with modular component integration, </p>
                     
                     
                     <div class="aboutme__btnContainer">
@@ -174,12 +175,12 @@
                 <form action="">
                     <div class="form-floating mb-3">
                         <i class="fa fa-thin fa-user-tie icon"></i>
-                        <input type="text" class="form-control" id="floatingName" placeholder="Name">
+                        <input type="text" class="form-control" id="floatingName" placeholder="Name" required>
                         <label for="floatingName">Name</label>
                     </div>
                     <div class="form-floating mb-3">    
                         <i class="fa fa-thin fa-envelope icon"></i>
-                        <input type="email" class = "form-control" id="floatingEmail" placeholder="email">
+                        <input type="email" class = "form-control" id="floatingEmail" placeholder="email" required>
                         <label for="floatingEmail">Email</label>
                     </div>
                     <div class="form-floating mb-3">
@@ -189,7 +190,7 @@
                     </div>
                     <div class="form-floating mb-3 form__message"> <!-- <-- no more 'flex class' -->
                         <i class="fa fa-thin fa-message icon"></i>
-                        <textarea class="form-control" id="floatingTextArea" cols="30" rows="2" placeholder="Your Message"></textarea>
+                        <textarea class="form-control" id="floatingTextArea" cols="30" rows="2" placeholder="Your Message" required></textarea>
                         <label for="floatingTextArea">Your Message</label>
                     </div>
                     
@@ -243,7 +244,7 @@
                 <div class="text-center text-md-start mt-5">
                     <!-- Grid row -->
                     <div class="row container-md mt-3">
-                        <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <div class="col-md-5 col-lg-4 col-xl-3 mx-auto mb-4 footer__text">
                             <!-- Content -->
                             <h6 class="text-uppercase fw-bold mb-4">
                             <i class="fas fa-gem me-3"></i>Company name
@@ -256,49 +257,49 @@
                         <!-- Grid column -->
                 
                         <!-- Grid column -->
-                        <div class="col-sm-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <div class="col-auto col-sm-2 col-lg-2 col-xl-2 mx-auto mb-3">
                             <!-- Links -->
                             <h6 class="text-uppercase fw-bold mb-4">
                             Products
                             </h6>
                             <p>
-                            <a href="#!">Angular</a>
+                            <a class = "footer__link" href="#!">Angular</a>
                             </p>
                             <p>
-                            <a href="#!">React</a>
+                            <a class = "footer__link" href="#!">React</a>
                             </p>
                             <p>
-                            <a href="#!">Vue</a>
+                            <a class = "footer__link" href="#!">Vue</a>
                             </p>
                             <p>
-                            <a href="#!">Laravel</a>
+                            <a class = "footer__link" href="#!">Laravel</a>
                             </p>
                         </div>
                         <!-- Grid column -->
                 
                         <!-- Grid column -->
-                        <div class="col-sm-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <div class="col-auto col-sm-2 col-lg-2 col-xl-2 mx-auto mb-3">
                             <!-- Links -->
                             <h6 class="text-uppercase fw-bold mb-4">
                             Useful links
                             </h6>
                             <p>
-                            <a href="#!">Pricing</a>
+                            <a class = "footer__link" href="#!">Pricing</a>
                             </p>
                             <p>
-                            <a href="#!">Settings</a>
+                            <a class = "footer__link" href="#!">Settings</a>
                             </p>
                             <p>
-                            <a href="#!">Orders</a>
+                            <a class = "footer__link" href="#!">Orders</a>
                             </p>
                             <p>
-                            <a href="#!">Help</a>
+                            <a class = "footer__link" href="#!">Help</a>
                             </p>
                         </div>
                         <!-- Grid column -->
                 
                         <!-- Grid column -->
-                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <div class="col-auto col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                             <!-- Links -->
                             <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
                             <p><i class="fas fa-home me-3"></i>Ocean Springs, MS 39564</p>
@@ -311,20 +312,28 @@
                 </div>
             </div>
             <!-- Section: Links  -->
-            <div class="footer__section-1 d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <div class="footer__section-1 d-flex justify-content-center justify-content-lg-between p-4">
                 
                 <!-- Right -->
-                <div class ="d-flex justify-content-between" style ="width:200px">
-                    <a class = "footer__icon" href="">
-                        <i class="fab fa-instagram"></i>
+                <div class ="d-flex justify-content-between footer__icons">
+                    <a class = "footer__icon" href="https://www.linkedin.com/in/nicholas-nall-0b3795252/">
+                        <svg class = "footer__svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 310 310" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_801_"> <path id="XMLID_802_" d="M72.16,99.73H9.927c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5H72.16c2.762,0,5-2.238,5-5V104.73 C77.16,101.969,74.922,99.73,72.16,99.73z"></path> <path id="XMLID_803_" d="M41.066,0.341C18.422,0.341,0,18.743,0,41.362C0,63.991,18.422,82.4,41.066,82.4 c22.626,0,41.033-18.41,41.033-41.038C82.1,18.743,63.692,0.341,41.066,0.341z"></path> <path id="XMLID_804_" d="M230.454,94.761c-24.995,0-43.472,10.745-54.679,22.954V104.73c0-2.761-2.238-5-5-5h-59.599 c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5h62.097c2.762,0,5-2.238,5-5v-98.918c0-33.333,9.054-46.319,32.29-46.319 c25.306,0,27.317,20.818,27.317,48.034v97.204c0,2.762,2.238,5,5,5H305c2.762,0,5-2.238,5-5V194.995 C310,145.43,300.549,94.761,230.454,94.761z"></path> </g> </g></svg>
                     </a>
-                    <a class = "footer__icon" href="">
-                        <i class="fab fa-linkedin"></i>
+                    <a class = "footer__icon" href="https://github.com/nnall">
+                        <svg aria-hidden="true" class="footer__svg" version="1.1" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
                     </a>
-                    <a class = "footer__icon" href="">
-                        <i class="fab fa-github"></i>
+                    <a class = "footer__icon" href="https://www.frontendmentor.io/profile/nnall">
+                        <svg class = "footer__svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Frontend Mentor</title><path d="M12.1706 1.2719a.732.732 0 00-.7186.732v13.914a.732.732 0 00.732.732.732.732 0 00.7318-.732V2.004a.732.732 0 00-.7452-.732zm11.0741 4.1685a.7339.7339 0 00-.2764.063L16.686 8.307a.7329.7329 0 000 1.3361l6.2823 2.8134a.7378.7378 0 00.2993.0648.732.732 0 00.2973-1.401l-4.786-2.1443 4.786-2.1366a.7339.7339 0 00.3698-.9664.7339.7339 0 00-.69-.4327zm-22.499 5.032a.7316.7316 0 00-.7223.9149c1.736 6.677 7.7748 11.341 14.6822 11.341a.732.732 0 000-1.464 13.7055 13.7055 0 01-13.266-10.2449.7316.7316 0 00-.6939-.547z"/></svg>
+                    </a>
+
+                 
+                    <a class = "footer__icon" href="https://codepen.io/nnall">
+                        <svg class = "footer__svg" role="img" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.5 0.5L7.79062 0.0931333C7.61677 -0.0310444 7.38323 -0.0310444 7.20938 0.0931333L7.5 0.5ZM14.5 5.5H15C15 5.33852 14.922 5.18699 14.7906 5.09313L14.5 5.5ZM14.5 9.5L14.7906 9.90687C14.922 9.81301 15 9.66148 15 9.5H14.5ZM7.5 14.5L7.20938 14.9069C7.38323 15.031 7.61677 15.031 7.79062 14.9069L7.5 14.5ZM0.5 9.5H0C0 9.66148 0.0779828 9.81301 0.209381 9.90687L0.5 9.5ZM0.5 5.5L0.209381 5.09313C0.0779828 5.18699 0 5.33852 0 5.5H0.5ZM7.20938 0.906867L14.2094 5.90687L14.7906 5.09313L7.79062 0.0931333L7.20938 0.906867ZM14 5.5V9.5H15V5.5H14ZM14.2094 9.09313L7.20938 14.0931L7.79062 14.9069L14.7906 9.90687L14.2094 9.09313ZM7.79062 14.0931L0.790619 9.09313L0.209381 9.90687L7.20938 14.9069L7.79062 14.0931ZM1 9.5V5.5H0V9.5H1ZM0.790619 5.90687L7.79062 0.906867L7.20938 0.0931333L0.209381 5.09313L0.790619 5.90687ZM0.790619 9.90687L7.79062 4.90687L7.20938 4.09313L0.209381 9.09313L0.790619 9.90687ZM7.20938 4.90687L14.2094 9.90687L14.7906 9.09313L7.79062 4.09313L7.20938 4.90687ZM0.209381 5.90687L7.20938 10.9069L7.79062 10.0931L0.790619 5.09313L0.209381 5.90687ZM7.79062 10.9069L14.7906 5.90687L14.2094 5.09313L7.20938 10.0931L7.79062 10.9069ZM7 0.5V4.5H8V0.5H7ZM7 10.5V14.5H8V10.5H7Z"/>
+                            </svg>
                     </a>
                 </div>
+
             </div>
         </div>
     </footer>
