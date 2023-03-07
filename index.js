@@ -67,3 +67,24 @@ closeBtn.addEventListener('click', ()=>{
 
 
 
+function sendMail(){
+    var params = {
+        name: document.getElementById("floatingName").value,
+        email: document.getElementById("floatingEmail").value,
+        phone: document.getElementById("floatingPhone").value,
+        message: document.getElementById("floatingTextArea").value,
+    }
+    const serviceID = "service_bcmsv6l";
+    const templateID = "template_b16kunh";
+
+    emailjs.send(serviceID, templateID, params).then(
+        res => {
+            document.getElementById("floatingName").value = "";
+            document.getElementById("floatingEmail").value = "";
+            document.getElementById("floatingPhone").value = "";
+            document.getElementById("floatingTextArea").value = "";
+            console.log(res);
+            alert('Your message has been sent!');
+        });
+}
+

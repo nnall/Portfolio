@@ -113,7 +113,14 @@ a:not(.nav__list__link), .hero__resumeBtn{
 }
 
 /* Mobile mode - no hover effect (margin change), but BG color still changes, and no :active state margin change either. MArgin change only for nav__list__links bc they have a box-shadow while unhovered  */
+.nav__list__link:hover, .hero__btn:hover, .aboutme__link:hover, .footer__link:hover{
+    background-color: rgb(30, 66, 88);
+    color:white;
+}
 
+.footer__icon:hover svg{
+    fill: var(--darkBlue);
+}
 
 
 .hero__btn:active, .aboutme__link:active, .previewer__btn:active, .footer__link:active{
@@ -125,17 +132,26 @@ a:not(.nav__list__link), .hero__resumeBtn{
 
 
 
-
 /* ....................................... HEADER ................................... */
 
 header{
     position:fixed;
+
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+
+
     top:0;
     z-index:200;
     min-width:100%;
     padding:.75rem 2rem;
     background-color:var(--medBlue);
    
+}
+
+nav{
+    display:block;
 }
 
 
@@ -163,6 +179,22 @@ header{
     color:var(--darkBlue);
 }
 
+
+/* ................... NAV BANNER (Nick Nall Designs) ............... */
+
+.nav__h3{
+    font-family: 'Sono', sans-serif;
+    letter-spacing: -3px;
+    position:absolute;
+    margin:0;
+    left:25%;
+    min-width:max-content;
+    /* border:1px solid red; */
+    color:white;
+    font-size:2rem;
+   
+}
+
 /* ...............DROP-DOWN NAV / NAV MENU............. */
 
 /* <ul> */
@@ -172,6 +204,7 @@ header{
    padding-left:0;     /*<-- undoing Bootstrap CSS (reboot.scss, line 167)*/
    list-style-type: none;
    display:none;
+
 }
 
 /* utility class to reveal <nav> */
@@ -325,6 +358,28 @@ h1{
     border-radius:50%;
     right:1rem;
 }
+
+/* ............Previewer Btn States............ */
+
+/* Hover */
+
+.previewer__btn:not(.closeBtn):hover{
+    background-color:var(--darkBlue);
+}
+
+.closeBtn:hover{
+    background-color:var(--darkRed);
+}
+
+.previewer__btn:not(.closeBtn):hover span{
+    color:white;
+} 
+
+.previewer__btn:hover svg{
+    stroke:white;
+}
+
+/* Click */
 
 .previewer__btn:active{
     background-color: var(--darkBlue);
@@ -656,11 +711,17 @@ form >*:not(button){
     font-size:1.2rem;
 }
 
+.footer__title{
+    font-family: 'Sono', sans-serif;
+    font-weight: 300;
+    font-size:1.5rem;
+}
+
 /* icon box */
 
 .footer__icons{
     width:100%;
-    max-width:325px;
+    max-width:250px;
     margin-right:auto;
     margin-left:auto;
 }
@@ -672,8 +733,8 @@ form >*:not(button){
 
 
 .footer__svg{
-    height:2.5rem;
-    width:2.5rem;
+    height:2rem;
+    width:2rem;
     fill:var(--medBlue);
     transition:all .1s ease-out;
     transition-delay: .05s;
@@ -706,9 +767,6 @@ form >*:not(button){
 @media(min-width:420px){
     /* ...... GLOBAL ELEMENTS........ */
 
-    /* section:not(.examplework__section):not(.previewer__section) > *{
-        margin-bottom:2rem;
-    } */
 
     .aboutme__section > *, .contact__section > * {
         margin-bottom:2rem;
@@ -719,6 +777,8 @@ form >*:not(button){
     .nav__list__link{
         font-size:2em;
     }
+
+   
 
     /* ............ MAIN ............ */
 
@@ -760,7 +820,17 @@ form >*:not(button){
         gap:1.5rem;
     }
 
+    /* ......... HEADER ............. */
+    .nav__h3{
+        left:50%;
+        transform:translatex(-50%);
+        font-size:3rem;
+    }
+
 }
+
+
+
 
 
 /* .................. 1300px DESKTOP BREAKPOINT............... */
