@@ -80,7 +80,7 @@
                 </p>
                 <div class="hero__btnContainer">
                     <a class="hero__btn hero__contactBtn" href="#contact">Get in touch!</a> <!-- to footer-->
-                    <button class = "hero__btn hero__resumeBtn" aria-expanded="false" aria-controls="previewerCtn" role="modal">
+                    <button type="button" class = "hero__btn hero__resumeBtn" data-a11y-dialog-show="my-dialog-container" aria-expanded="false" aria-controls="previewerCtn" role="modal">
                         resum<span>&egrave;</span>
                     </button> 
                 </div>
@@ -220,13 +220,16 @@
         </div>
       
     </main>
+
+
+    <!-- ................................ PREVIEWER ............................... -->
     
     
-    <div id="my-dialog-container" data-a11y-dialog="my-dialog-container" class = "previewer__component" aria-labelledby="my-dialog-container" aria-hidden="true">
+    <div id="my-dialog-container" role="document" data-a11y-dialog="my-dialog-container" data-a11y-dialog-hide class = "previewer__component" aria-labelledby="my-dialog-container" aria-hidden="true">
         <!-- 2. The dialog overlay -->
         <div data-a11y-dialog-hide></div>
         <!-- 3. The actual dialog -->
-        <div role="document">
+        <!-- <div class = "a11y" > -->
             <!-- 5. The dialog title -->
             <!-- <h1 id="your-dialog-title-id">Your dialog title</h1> -->
             <section class="previewer__section button__section">
@@ -250,8 +253,12 @@
                 <iframe id="iframe" frameborder="0" src="resume/ExampleResume.pdf#toolbar=0&"></iframe>
             </section>
             
-        </div>
+        <!-- </div> -->
+           
     </div>
+
+
+
 
     <footer id ="footer" class="text-center text-lg-start bg-light text-muted">
         <div class="container footer__container"> <!-- border red -->
@@ -365,7 +372,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
     <script src = "index.js"></script>
-    <!-- <script src = "module.js" type = "module"></script> -->
+    <script src = "module.js" type = "module"></script> <!-- for a11y-dialog import code -->
 
 </body>
 </html>

@@ -23,14 +23,42 @@ navBtn.addEventListener("click", function() {
         navBtn.setAttribute("aria-expanded", "true");
     }
 });
+// ..................CLICK AWAY FROM OPEN NAV CLOSES IT..................
+body.addEventListener("click", function(e) {
+    // as long as click is not on the nav__btn, nor is it on a nav__list__link, then we need to remove 'displayNav' class from the navList
+    if (!e.target.classList.contains("nav__svg") && !e.target.classList.contains("nav__list__link")) // console.log('you did not click the nav button nor the nav link')
+    {
+        if (navList.classList.contains("displayNav")) {
+            navList.classList.remove("displayNav");
+            navBtn.setAttribute("aria-expanded", "false");
+        }
+    }
+});
 //  OPENS/CLOSES PREVIEWER
 resumeBtn.addEventListener("click", ()=>{
     previewerComp.classList.add("displayPreviewer"); /* <-- display:block class */ 
 });
 closeBtn.addEventListener("click", ()=>{
     previewerComp.classList.remove("displayPreviewer");
-}) //................................. ACCESSIBILITY ................................//
- // using 1300px 'desktop breakpoint bc just after the widest horizontal tablet width (smallest laptop widths start @ ~2300px)
-;
+});
+// ....................... GET IN TOUCH FORM ......................
+function sendMail() {
+    var params = {
+        name: document.getElementById("floatingName").value,
+        email: document.getElementById("floatingEmail").value,
+        phone: document.getElementById("floatingPhone").value,
+        message: document.getElementById("floatingTextArea").value
+    };
+    const serviceID = "service_bcmsv6l";
+    const templateID = "template_b16kunh";
+    emailjs.send(serviceID, templateID, params).then((res)=>{
+        document.getElementById("floatingName").value = "";
+        document.getElementById("floatingEmail").value = "";
+        document.getElementById("floatingPhone").value = "";
+        document.getElementById("floatingTextArea").value = "";
+        console.log(res);
+        alert("Your message has been sent!");
+    });
+} // ....................... A11Y-DIALOG MODAL ..........................
 
 //# sourceMappingURL=index.c36f364e.js.map

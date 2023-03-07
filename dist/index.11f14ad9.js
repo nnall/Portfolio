@@ -563,7 +563,37 @@ var _a11YDialogDefault = parcelHelpers.interopDefault(_a11YDialog);
 const container = document.querySelector("#my-dialog-container");
 const dialog = new (0, _a11YDialogDefault.default)(container);
 
-},{"a11y-dialog":"6Wzpm","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6Wzpm":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","a11y-dialog":"6Wzpm"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"6Wzpm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>A11yDialog);
@@ -857,36 +887,6 @@ if (typeof document !== "undefined") {
     else window.setTimeout(instantiateDialogs, 16);
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}]},["6EAvK","dxpzB"], "dxpzB", "parcelRequire2041")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["6EAvK","dxpzB"], "dxpzB", "parcelRequire2041")
 
 //# sourceMappingURL=index.11f14ad9.js.map

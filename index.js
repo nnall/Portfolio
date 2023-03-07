@@ -17,9 +17,6 @@ const navListLinks = document.querySelectorAll('.nav__list__link') // All .nav__
 const pageLinks = document.querySelectorAll('a:not(.nav__list__link)'); // ALL <a> on page (NOT including NAV <a> <-- see above)
 const btns = document.querySelectorAll('button:not(.nav__btn)');  // All <button> elements except the .nav__btn
 
-
-
-
 // OPENS AND CLOSES NAV MENU
 navBtn.addEventListener('click', function(){
     
@@ -33,11 +30,10 @@ navBtn.addEventListener('click', function(){
     }
  })
 
-// Clicking outside of navList while it's open closes it
+// ..................CLICK AWAY FROM OPEN NAV CLOSES IT..................
+
  body.addEventListener('click', function(e){
 // as long as click is not on the nav__btn, nor is it on a nav__list__link, then we need to remove 'displayNav' class from the navList
-
-
     if(!e.target.classList.contains('nav__svg') && !e.target.classList.contains('nav__list__link')){
         // console.log('you did not click the nav button nor the nav link')
 
@@ -53,7 +49,6 @@ navBtn.addEventListener('click', function(){
 //  OPENS/CLOSES PREVIEWER
 resumeBtn.addEventListener('click', ()=>{
     previewerComp.classList.add('displayPreviewer');/* <-- display:block class */
-
 })
 
 closeBtn.addEventListener('click', ()=>{
@@ -61,11 +56,7 @@ closeBtn.addEventListener('click', ()=>{
 })
 
 
-
-
-
-
-
+// ....................... GET IN TOUCH FORM ......................
 
 function sendMail(){
     var params = {
@@ -87,4 +78,9 @@ function sendMail(){
             alert('Your message has been sent!');
         });
 }
+
+
+// ....................... A11Y-DIALOG MODAL ..........................
+
+
 
