@@ -5,7 +5,7 @@ const dialog = new A11yDialog(container);
 // console.log(container);
 
 dialog.on('show', function(container, event){
-    
+
 })
 
 

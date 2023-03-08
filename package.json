@@ -1,12 +1,14 @@
 {
   
   "name": "portfolio",
-  "main": "index.js",
+
+  "main": "index.html",
   
   
   "scripts":{
     "start": "parcel index.html --open",
     "build": "parcel build index.html"
+
 
   },
 
