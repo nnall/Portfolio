@@ -562,6 +562,8 @@ var _a11YDialog = require("a11y-dialog"); /*<-- import */
 var _a11YDialogDefault = parcelHelpers.interopDefault(_a11YDialog);
 const container = document.querySelector("#my-dialog-container");
 const dialog = new (0, _a11YDialogDefault.default)(container);
+// console.log(container);
+dialog.on("show", function(container, event) {});
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","a11y-dialog":"6Wzpm"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {

@@ -225,11 +225,16 @@
     <!-- ................................ PREVIEWER ............................... -->
     
     
-    <div id="my-dialog-container" role="document" data-a11y-dialog="my-dialog-container" data-a11y-dialog-hide class = "previewer__component" aria-labelledby="my-dialog-container" aria-hidden="true">
+    <div 
+    id="my-dialog-container" 
+    class = "dialog-container" 
+    data-a11y-dialog="my-dialog-container" 
+    aria-labelledby="my-dialog-container" 
+    aria-hidden="true">
         <!-- 2. The dialog overlay -->
-        <div data-a11y-dialog-hide></div>
+        <div class ="dialog-overlay" data-a11y-dialog-hide></div>
         <!-- 3. The actual dialog -->
-        <!-- <div class = "a11y" > -->
+        <div class="previewer__component" role="document">
             <!-- 5. The dialog title -->
             <!-- <h1 id="your-dialog-title-id">Your dialog title</h1> -->
             <section class="previewer__section button__section">
@@ -241,7 +246,7 @@
                     <svg class = "previewer__svg print__svg" alt = "print image" width="800px" height="800px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000"><rect x="16" y="32" width="32" height="24"/><line x1="24" y1="48" x2="40" y2="48"/><line x1="24" y1="40" x2="40" y2="40"/><polyline points="20 16 20 8 44 8 44 16"/><polyline points="16 40 8 40 8 16 56 16 56 40 48 40"/></svg>
                     <span class = "previewer__span">Print</span>
                 </a>
-                
+    
                 <!-- 4. The close button -->
                 <button type="button" class="previewer__btn closeBtn" data-a11y-dialog-hide aria-label="Close dialog">
                     <svg class = "previewer__svg close__svg" alt = "close symbol" width="800px" height="800px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000"><line x1="16" y1="16" x2="48" y2="48"/><line x1="48" y1="16" x2="16" y2="48"/></svg>
@@ -252,9 +257,10 @@
             <section class="previewer__section document__section">
                 <iframe id="iframe" frameborder="0" src="resume/ExampleResume.pdf#toolbar=0&"></iframe>
             </section>
-            
-        <!-- </div> -->
-           
+        
+            <!-- </div> -->
+        
+        </div>
     </div>
 
 
@@ -371,8 +377,10 @@
       <!-- Bootstrap JS  (for carousel)-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
-    <script src = "index.js"></script>
+
     <script src = "module.js" type = "module"></script> <!-- for a11y-dialog import code -->
+    <script src = "index.js"></script>
+    
 
 </body>
 </html>

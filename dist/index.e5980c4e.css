@@ -213,25 +213,54 @@ h1 {
   max-width: max-content;
 }
 
+.dialog-container[aria-hidden="true"] {
+  display: none;
+}
+
+.dialog-container, .dialog-overlay {
+  z-index: 249;
+  position: fixed;
+  inset: 0;
+}
+
+.dialog-overlay {
+  background-color: #2b2e38e6;
+  animation: .2s both fade-in;
+}
+
 .previewer__component {
+  z-index: 251;
   background-color: var(--white);
   border: 2px solid var(--tanGreyDark);
-  z-index: 250;
   width: 90%;
   max-width: 1150px;
   min-height: max-content;
   max-height: max-content;
   border-radius: 20px;
   padding: 1rem;
-  display: none;
-  position: fixed;
+  animation: .4s .2s both fade-in, .4s .2s both slide-up;
+  position: relative;
   top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.a11y {
-  border: 1px solid #00f;
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translate(10% 10%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dialog-overlay, .previewer__component {
+    animation: none;
+  }
 }
 
 .displayPreviewer {
