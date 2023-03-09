@@ -145,7 +145,7 @@ header{
     top:0;
     z-index:200;
     min-width:100%;
-    padding:.75rem 2rem;
+    padding:.75rem 1rem;
     background-color:var(--medBlue);
    
 }
@@ -187,11 +187,11 @@ nav{
     letter-spacing: -3px;
     position:absolute;
     margin:0;
-    left:23%;
+    left:22%;
     min-width:max-content;
     /* border:1px solid red; */
     color:white;
-    font-size:2rem;
+    font-size:1.75rem;
    
 }
 
@@ -255,7 +255,8 @@ nav{
 }
 
 h1{
-    font-size:2em;  
+    font-size:2.5em;  
+    font-family: 'Sono', sans-serif;;
     display:inline-block;
 }
 
@@ -793,7 +794,7 @@ form >*:not(button){
 @media(min-width:325px){
     /* ............ MAIN ........... */
     h1{
-        font-size:2.5em; /* 37.5px */
+        font-size:3em; /* 37.5px */
     }
 }
 
@@ -818,6 +819,10 @@ form >*:not(button){
     
     .nav__list__link{
         font-size:2em;
+    }
+
+    .nav__h3{
+        font-size:2.25rem;
     }
 
    
@@ -862,13 +867,18 @@ form >*:not(button){
         gap:1.5rem;
     }
 
+    
+
+}
+
+@media(min-width:590px){
+
     /* ......... HEADER ............. */
     .nav__h3{
         left:50%;
         transform:translatex(-50%);
         font-size:3rem;
     }
-
 }
 
 

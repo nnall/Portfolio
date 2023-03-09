@@ -33,17 +33,34 @@ navBtn.addEventListener('click', function(){
 // ..................CLICK AWAY FROM OPEN NAV CLOSES IT..................
 
  body.addEventListener('click', function(e){
-// as long as click is not on the nav__btn, nor is it on a nav__list__link, then we need to remove 'displayNav' class from the navList
-    if(!e.target.classList.contains('nav__svg') && !e.target.classList.contains('nav__list__link')){
-        // console.log('you did not click the nav button nor the nav link')
+// as long as click is not on the nav__btn, nor is it on a nav__list__link, then we need to remove 'displayNav' class from the navList\\
+
+    if(!e.target.classList.contains('nav__svg')){
 
         if(navList.classList.contains('displayNav')){
             navList.classList.remove('displayNav');
             navBtn.setAttribute('aria-expanded', 'false')
         }
-    } 
+    }
+
+    
+
+    // if(e.target.classList.contains('nav__svg') && !e.target.classList.contains('nav__list__link')){
+    //     // console.log('you did not click the nav button nor the nav link')
+
+    //     if(navList.classList.contains('displayNav')){
+    //         navList.classList.remove('displayNav');
+    //         navBtn.setAttribute('aria-expanded', 'false')
+    //     }
+    // } 
 
  });
+
+
+
+
+
+
 
 
 //  OPENS/CLOSES PREVIEWER
