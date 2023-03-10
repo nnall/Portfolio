@@ -111,7 +111,7 @@ header {
   background-color: var(--medBlue);
   justify-content: flex-start;
   align-items: center;
-  padding: .75rem 2rem;
+  padding: .75rem 1rem;
   display: flex;
   position: fixed;
   top: 0;
@@ -147,9 +147,9 @@ nav {
   color: #fff;
   margin: 0;
   font-family: Sono, sans-serif;
-  font-size: 2rem;
+  font-size: 1.75rem;
   position: absolute;
-  left: 25%;
+  left: 22%;
 }
 
 .nav__list {
@@ -193,7 +193,8 @@ nav {
 }
 
 h1 {
-  font-size: 2em;
+  font-family: Sono, sans-serif;
+  font-size: 2.5em;
   display: inline-block;
 }
 
@@ -528,13 +529,12 @@ h1 {
 }
 
 .contact__section {
-  min-height: 90%;
   flex-direction: column;
   display: flex;
 }
 
-form {
-  max-height: 100%;
+#floatingTextArea {
+  height: calc(100vh - 470px);
 }
 
 form > :not(button) {
@@ -599,6 +599,7 @@ form > :not(button) {
 }
 
 .footer__title {
+  word-spacing: -5px;
   font-family: Sono, sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
@@ -625,7 +626,7 @@ form > :not(button) {
 
 @media (min-width: 325px) {
   h1 {
-    font-size: 2.5em;
+    font-size: 3em;
   }
 }
 
@@ -642,6 +643,10 @@ form > :not(button) {
 
   .nav__list__link {
     font-size: 2em;
+  }
+
+  .nav__h3 {
+    font-size: 2.25rem;
   }
 
   .hero__btnContainer {
@@ -679,7 +684,9 @@ form > :not(button) {
     flex-direction: row;
     gap: 1.5rem;
   }
+}
 
+@media (min-width: 590px) {
   .nav__h3 {
     font-size: 3rem;
     left: 50%;

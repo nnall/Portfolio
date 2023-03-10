@@ -679,13 +679,12 @@ put 'mobile' version pictures in it initially, then, at some breakpoint, switch 
 }
 
 .contact__section{
-    min-height:90%;
     display:flex;
     flex-direction:column;
 }
 
-form{
-    max-height:100%;
+#floatingTextArea{
+    height:calc(100vh - 470px);
 }
 
 form >*:not(button){
@@ -758,7 +757,9 @@ form >*:not(button){
     font-family: 'Sono', sans-serif;
     font-weight: 300;
     font-size:1.5rem;
+    word-spacing:-5px;
 }
+
 
 /* icon box */
 
@@ -880,6 +881,7 @@ form >*:not(button){
         font-size:3rem;
     }
 }
+
 
 
 
