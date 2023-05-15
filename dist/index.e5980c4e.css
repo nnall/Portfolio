@@ -459,22 +459,26 @@ h1 {
 }
 
 .carousel-item__1 {
-  background-image: url("CarOneMob.5b9b2fb3.png");
+  background-image: url("devJobsMob.2820d823.png");
 }
 
 .carousel-item__2 {
-  background-image: url("CarTwoMob.c8ce1b5a.png");
+  background-image: url("CarOneMob.5b9b2fb3.png");
 }
 
 .carousel-item__3 {
-  background-image: url("CarThreeMob.eca679e6.png");
+  background-image: url("CarTwoMob.c8ce1b5a.png");
 }
 
 .carousel-item__4 {
-  background-image: url("CarFourMob.c7b352df.png");
+  background-image: url("CarThreeMob.eca679e6.png");
 }
 
 .carousel-item__5 {
+  background-image: url("CarFourMob.c7b352df.png");
+}
+
+.carousel-item__6 {
   background-image: url("CarFiveMob.aa12ca14.png");
 }
 
@@ -659,22 +663,26 @@ form > :not(button) {
   }
 
   .carousel-item__1 {
-    background-image: url("CarOneDesk.44e50c63.png");
+    background-image: url("devJobsDesk.7686d2f0.png");
   }
 
   .carousel-item__2 {
-    background-image: url("CarTwoDesk.d93faf37.png");
+    background-image: url("CarOneDesk.44e50c63.png");
   }
 
   .carousel-item__3 {
-    background-image: url("CarThreeDesk.06a20f66.png");
+    background-image: url("CarTwoDesk.d93faf37.png");
   }
 
   .carousel-item__4 {
-    background-image: url("CarFourDesk.af148149.png");
+    background-image: url("CarThreeDesk.06a20f66.png");
   }
 
   .carousel-item__5 {
+    background-image: url("CarFourDesk.af148149.png");
+  }
+
+  .carousel-item__6 {
     background-image: url("CarFiveDesk.c044c5f7.png");
   }
 }

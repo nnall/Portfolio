@@ -32,15 +32,9 @@ body.addEventListener("click", function(e) {
             navBtn.setAttribute("aria-expanded", "false");
         }
     }
-// if(e.target.classList.contains('nav__svg') && !e.target.classList.contains('nav__list__link')){
-//     // console.log('you did not click the nav button nor the nav link')
-//     if(navList.classList.contains('displayNav')){
-//         navList.classList.remove('displayNav');
-//         navBtn.setAttribute('aria-expanded', 'false')
-//     }
-// } 
 });
-//  OPENS/CLOSES PREVIEWER
+//  ............ OPENS/CLOSES PREVIEWER ............  //
+// NOTE: clicking in the .div-overlay area doesn't affect this class.. it will remain added the the dialog container
 resumeBtn.addEventListener("click", ()=>{
     previewerComp.classList.add("displayPreviewer"); /* <-- display:block class */ 
 });

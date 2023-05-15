@@ -600,25 +600,31 @@ so I took the H2 out of the parent .examplework__section, at which point it allo
 
 /* instead of just using 'desktop' picture for each slide... 
 put 'mobile' version pictures in it initially, then, at some breakpoint, switch them all to a desktop version picture
+
+
 */
 
 .carousel-item__1{
-    background-image: url(img/CarOneMob.png);
+    background-image: url(img/devJobsMob.png);
 }
 
 .carousel-item__2{
-    background-image: url(img/CarTwoMob.png);
+    background-image: url(img/CarOneMob.png);
 }
 
 .carousel-item__3{
-    background-image: url(img/CarThreeMob.png);
+    background-image: url(img/CarTwoMob.png);
 }
 
 .carousel-item__4{
-    background-image:url(img/CarFourMob.png);
+    background-image: url(img/CarThreeMob.png);
 }
 
 .carousel-item__5{
+    background-image:url(img/CarFourMob.png);
+}
+
+.carousel-item__6{
     background-image:url(img/CarFiveMob.png);
 }
 
@@ -840,22 +846,26 @@ form >*:not(button){
     }
 
     .carousel-item__1{
-        background-image:url(img/CarOneDesk.png);
+        background-image: url(img/devJobsDesk.png);
     }
 
     .carousel-item__2{
-        background-image:url(img/CarTwoDesk.png);
+        background-image:url(img/CarOneDesk.png);
     }
 
     .carousel-item__3{
+        background-image:url(img/CarTwoDesk.png);
+    }
+
+    .carousel-item__4{
         background-image:url(img/CarThreeDesk.png);
     }
     
-    .carousel-item__4{
+    .carousel-item__5{
         background-image:url(img/CarFourDesk.png);
     }
 
-    .carousel-item__5{
+    .carousel-item__6{
         background-image:url(img/CarFiveDesk.png);
     }
 
